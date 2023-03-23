@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @about %>
+
+<div>
+  <%= link_to "Edit this about", edit_about_path(@about) %> |
+  <%= link_to "Back to abouts", abouts_path %>
+
+  <%= button_to "Destroy this about", @about, method: :delete %>
+</div>

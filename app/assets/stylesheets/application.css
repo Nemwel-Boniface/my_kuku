@@ -21,6 +21,11 @@
   font-family: 'Poppins', sans-serif;
  }
 
+ html,
+body {
+  overflow-x: hidden;
+}
+
 :root {
   --darkgreen: rgba(30, 71, 25, 1);
   --orange: rgba(246, 206, 33, 1);

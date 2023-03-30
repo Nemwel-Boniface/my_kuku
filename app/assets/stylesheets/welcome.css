@@ -11,11 +11,15 @@
 
 .welcome {
   background-color: rgba(247, 247, 247, 1);
+  padding: 0 7%;
   margin-bottom: 80px;
 }
 
+/* Welcome header section */
+
 .welcome .welcomeHeader {
   text-align: center;
+  margin-bottom: 50px;
 }
 
 .welcome .welcomeHeader h4 {
@@ -30,4 +34,61 @@
 
 .welcome .welcomeHeader p {
   font-size: 20px;
+}
+
+/* Welcome top section styling */
+
+.welcometop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.welcometop .welcometopLeft img {
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 31% 69% 49% 51% / 45% 82% 18% 55% ;
+  height: 100%;
+  transition: 0.5s;
+  -webkit-filter: grayscale(100%) !important;
+  filter: grayscale(100%) !important;
+}
+
+.welcometop .welcometopLeft img:hover {
+  -webkit-filter: grayscale(0) !important;
+	filter: grayscale(0) !important;
+}
+
+.welcometopRight .welcometopLeftCard {
+  margin-bottom: 20px;
+  padding: 5% 7%;
+  background-color: #fff;
+  border-radius: 12px;
+  border-left: 10px solid var(--lightgreen);
+}
+
+.welcometop .welcometopLeftContact {
+  display: flex;
+  gap: 20px;
+}
+
+.welcometop .welcometopLeftContact .left {
+  margin: auto 0;
+}
+
+.welcometop .welcometopLeftContact .left p  {
+  
+}
+
+.welcometop .welcometopLeftContact .left p i {
+  background-color: var(--darkgreen);
+  padding: 30px;
+  font-size: 35px;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.welcometop .welcometopLeftContact .right .orangetext {
+  font-family: var(--alkatra);
 }

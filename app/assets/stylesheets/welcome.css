@@ -1,0 +1,33 @@
+/* Styling for the welcome section */
+
+:root {
+  --black: rgba(10, 10, 10, 0.8);
+  --darkgreen: rgba(30, 71, 25, 1);
+  --orange: rgba(246, 206, 33, 1);
+  --lightgreen: rgba(132, 194, 36, 1);
+  --kaushan: 'Kaushan Script', cursive;
+  --alkatra: 'Alkatra', cursive;
+}
+
+.welcome {
+  background-color: rgba(247, 247, 247, 1);
+  margin-bottom: 80px;
+}
+
+.welcome .welcomeHeader {
+  text-align: center;
+}
+
+.welcome .welcomeHeader h4 {
+  font-family: var(--alkatra);
+  font-size: 30px;
+}
+
+.welcome .welcomeHeader h2 {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.welcome .welcomeHeader p {
+  font-size: 20px;
+}

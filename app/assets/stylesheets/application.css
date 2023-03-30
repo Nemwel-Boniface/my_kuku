@@ -30,5 +30,37 @@ body {
   --darkgreen: rgba(30, 71, 25, 1);
   --orange: rgba(246, 206, 33, 1);
   --lightgreen: rgba(132, 194, 36, 1);
+  --lightgray: rgba(213, 213, 213, 1);
 }
 
+h2 {
+  font-size: 35px;
+}
+
+h3, h4 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 19px;
+}
+
+a {
+  font-size: 19px;
+}
+
+.orangetext {
+  color: var(--orange);
+}
+
+.lightgreentext {
+  color: var(--lightgreen);
+}
+
+.darkgreentext {
+  color: var(--darkgreen);
+}
+
+.lightgraytext {
+  color: var(--lightgray);
+}

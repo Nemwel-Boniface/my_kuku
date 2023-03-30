@@ -10,11 +10,12 @@
 
 /* Styling of the laning page section */
 
-.main {
+/* .main {
   position: relative;
-}
+} */
 
 .landing {
+  position: relative;
   background: linear-gradient(var(--black), var(--black)) ,url('/assets/eggshome.jpg');
   background-size: cover;
   background-position: center;

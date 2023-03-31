@@ -42,6 +42,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
+  margin-bottom: 80px;
 }
 
 .welcometop .welcometopLeft img {
@@ -92,3 +93,49 @@
 .welcometop .welcometopLeftContact .right .orangetext {
   font-family: var(--alkatra);
 }
+
+/* The welcome bottom section styling */
+
+.welcometopbottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  position: relative;
+}
+
+.welcometopbottom .left h4 {
+  font-family: var(--alkatra);
+  margin-bottom: 15px;
+}
+
+.welcometopbottom .left h2 {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.welcometopbottom .left p {
+  margin-bottom: 15px;
+}
+
+.welcometopbottom .left .aboutlink {
+  margin-top: 40px;
+}
+
+.welcometopbottom .left p a {
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--lightgreen);
+  padding: 15px;
+  border-radius: 25px;
+  font-size: 20px;
+  transition: 0.5s;
+}
+
+.welcometopbottom .left p a:hover {
+  background-color: var(--orange);
+}
+
+.welcometopbottom .left p a:active {
+  background-color: var(--lightgreen);
+}
+

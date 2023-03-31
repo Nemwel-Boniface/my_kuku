@@ -88,6 +88,11 @@
   font-size: 35px;
   color: #fff;
   border-radius: 50%;
+  transition: 0.5s;
+}
+
+.welcometop .welcometopLeftContact .left p i:hover {
+  background-color: var(--orange);
 }
 
 .welcometop .welcometopLeftContact .right .orangetext {
@@ -139,3 +144,27 @@
   background-color: var(--lightgreen);
 }
 
+.welcometopbottom .right {
+  position: relative;
+}
+
+.welcometopbottom .right img {
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.welcometopbottom .right p {
+  font-size: 23px;
+  font-weight: bold;
+  position: absolute;
+  width: 35%;
+  background-color: var(--orange);
+  color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  z-index: 2;
+  top: 10%;
+  left: -5%;
+}

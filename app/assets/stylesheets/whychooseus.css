@@ -1,0 +1,41 @@
+/* Styling for the why choose us section */
+
+:root {
+  --black: rgba(10, 10, 10, 0.8);
+  --darkgreen: rgba(30, 71, 25, 1);
+  --orange: rgba(246, 206, 33, 1);
+  --lightgreen: rgba(132, 194, 36, 1);
+  --kaushan: 'Kaushan Script', cursive;
+  --alkatra: 'Alkatra', cursive;
+}
+
+/* why choose us section */
+
+.whychooseus {
+  background-color: rgba(247, 247, 247, 1);
+  padding: 0 7%;
+  margin: 80px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.whychooseus .reason {
+  padding: 22px;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.whychooseus .reason:hover {
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.whychooseus .reason p, h4 {
+  margin-bottom: 20px;
+}
+
+.whychooseus .reason p i {
+  font-size: 50px;
+}
+

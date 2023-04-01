@@ -10,6 +10,5 @@ class HomesController < ApplicationController
       "image7": "farmimg7.jpg",
       "image8": "farmimg8.jpg"
     }
-    puts "Controller executed"
   end
 end

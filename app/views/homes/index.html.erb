@@ -124,6 +124,7 @@
       <%= @images.each do |name, path| %>
         <%= image_tag("farmimages/#{path}", alt: name) %>
       <% end %>
+      <% puts "View rendered" %>
     </div>
   </section>
 </main>

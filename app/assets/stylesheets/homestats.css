@@ -20,18 +20,50 @@
 .headercentered {
   text-align: center;
   padding: 0 15%;
+  margin-bottom: 50px
 }
 
 .headercentered h4 {
   font-family: var(--alkatra);
   font-size: 30px;
+  margin-bottom: 20px;
 }
 
 .headercentered h2 {
   font-size: 45px;
   font-weight: bold;
+  margin-bottom: 25px;
 }
 
 .headercentered p {
   font-size: 20px;
+}
+
+.farmstats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.farmstats .stats {
+  text-align: center;
+  color: #fff;
+  padding: 40px;
+  border-radius: 39% 61% 49% 51% / 75% 31% 69% 25%;
+  background-color: var(--lightgreen);
+  transition: 0.5s;
+}
+
+.farmstats .stats:hover {
+  background-color: var(--orange);
+}
+
+.farmstats .stats h2 {
+  font-weight: bold;
+  font-size: 45px;
+}
+
+.farmstats .stats p {
+  font-weight: bold;
+  font-size: 23px;
 }

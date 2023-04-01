@@ -119,6 +119,12 @@
       <h4 class="lightgreentext">Our gallery</h4>
       <h2 class="darkgreentext">Get to know our farm</h2>
     </div>
+
+    <div class="gallery">
+      <%= @images.each do |name, path| %>
+        <%= image_tag("farmimages/#{path}", alt: name) %>
+      <% end %>
+    </div>
   </section>
 </main>
 

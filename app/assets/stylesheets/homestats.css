@@ -1,0 +1,37 @@
+/* Styling for the home stats section */
+
+:root {
+  --black: rgba(10, 10, 10, 0.8);
+  --darkgreen: rgba(30, 71, 25, 1);
+  --orange: rgba(246, 206, 33, 1);
+  --lightgreen: rgba(132, 194, 36, 1);
+  --kaushan: 'Kaushan Script', cursive;
+  --alkatra: 'Alkatra', cursive;
+}
+
+/* home stats section */
+
+.homestats {
+  background-color: rgba(247, 247, 247, 1);
+  padding: 0 7%;
+  margin: 80px 0;
+}
+
+.headercentered {
+  text-align: center;
+  padding: 0 15%;
+}
+
+.headercentered h4 {
+  font-family: var(--alkatra);
+  font-size: 30px;
+}
+
+.headercentered h2 {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.headercentered p {
+  font-size: 20px;
+}

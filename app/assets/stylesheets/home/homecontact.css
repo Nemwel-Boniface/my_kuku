@@ -1,0 +1,51 @@
+/* Styling for the home contact section */
+
+:root {
+  --black: rgba(10, 10, 10, 0.8);
+  --darkgreen: rgba(30, 71, 25, 1);
+  --orange: rgba(246, 206, 33, 1);
+  --lightgreen: rgba(132, 194, 36, 1);
+  --kaushan: 'Kaushan Script', cursive;
+  --alkatra: 'Alkatra', cursive;
+}
+
+/* home contact section */
+
+.homecontact {
+  background-color: rgba(30, 71, 25, 1);
+  padding: 8%;
+  margin: 80px 0;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  gap: 30px;
+}
+
+.homecontact .left h2 {
+  margin-bottom: 15px;
+}
+
+.homecontact .left p {
+  color: #fff;
+  font-size: 20px;
+}
+
+.homecontact .right {
+  margin: auto 0;
+}
+
+.homecontact .right p a {
+  text-decoration: none;
+  background-color: var(--lightgreen);
+  padding: 15px;
+  border-radius: 25px;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.homecontact .right p a:hover {
+  background-color: var(--orange);
+}
+
+.homecontact .right p a:active {
+  background-color: var(--lightgreen);
+}

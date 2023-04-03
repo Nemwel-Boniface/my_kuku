@@ -21,6 +21,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 40px;
 }
 
 .homeblogs .blogstitle .left h4 {
@@ -46,5 +47,43 @@
 
 .homeblogs .blogstitle .right p a:active {
   background-color: var(--lightgreen);
+}
+
+.blogs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.blogs .blog {
+  margin-bottom: 30px;
+}
+
+.blogs .blog img {
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  height: 45vh;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.blogs .blog h3, p {
+  margin-bottom: 10px;
+}
+
+.italics {
+  font-style: italic;
+  font-size: 18px;
+}
+
+.bloglink {
+  color: var(--lightgreen);
+}
+
+.blogs .blog p a {
+  text-decoration: none;
+  color: var(--lightgreen);
+  padding-right: 10px;
 }
 

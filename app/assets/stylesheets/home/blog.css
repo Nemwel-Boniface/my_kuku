@@ -68,7 +68,8 @@
   margin-bottom: 15px;
 }
 
-.blogs .blog h3, p {
+.blogs .blog h3,
+p {
   margin-bottom: 10px;
 }
 
@@ -86,4 +87,3 @@
   color: var(--lightgreen);
   padding-right: 10px;
 }
-

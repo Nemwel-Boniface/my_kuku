@@ -14,7 +14,7 @@
 .homecontact {
   background-color: rgba(30, 71, 25, 1);
   padding: 8%;
-  margin: 80px 0;
+  margin: 80px 0 0 0;
   display: grid;
   grid-template-columns: 4fr 1fr;
   gap: 30px;

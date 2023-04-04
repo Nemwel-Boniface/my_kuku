@@ -1,0 +1,150 @@
+/* Styling for the footer section */
+
+:root {
+  --black: rgba(10, 10, 10, 0.8);
+  --darkgreen: rgba(30, 71, 25, 1);
+  --orange: rgba(246, 206, 33, 1);
+  --lightgreen: rgba(132, 194, 36, 1);
+  --kaushan: 'Kaushan Script', cursive;
+  --alkatra: 'Alkatra', cursive;
+}
+
+/* footer section */
+
+.footer {
+  background-color: rgba(247, 247, 247, 1);
+  padding: 8% 3%;
+}
+
+.footer .footerWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+
+.footer .footerWrapper div h2 {
+  margin-bottom: 15px;
+  color: var(--darkgreen);
+}
+
+.footer .footerWrapper div p {
+  margin-bottom: 15px;
+}
+
+/* Footer left section specific styling */
+
+.footer .footerWrapper div h2 span {
+  color: var(--orange);
+}
+
+.footer .footerWrapper .left .socials {
+  list-style-type: none;
+  display: flex;
+  margin: 40px 0;
+}
+
+.footer .footerWrapper .left .socials li {
+  margin-left: 15px;
+}
+
+.footer .footerWrapper .left .socials li a {
+  text-decoration: none;
+  background-color: var(--darkgreen);
+  padding: 10px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 22px;
+  transition: 0.5s;
+}
+
+.footer .footerWrapper .left .socials li a:hover {
+  background-color: var(--orange);
+}
+
+.footer .footerWrapper .left .socials li a:active {
+  background-color: var(--darkgreen);
+}
+
+/* Footer middle section styling */
+
+.middle .links {
+  list-style-type: none;
+}
+
+.middle .links li {
+  margin: 20px 0;
+  text-align: left;
+  transition: 0.5s;
+}
+
+.middle .links li i {
+  margin-right: 20px;
+  color: var(--lightgreen);
+}
+
+.middle .links li a {
+  text-decoration: none;
+  color: var(--darkgreen);
+}
+
+.middle .links li:hover a {
+  color: var(--lightgreen);
+}
+
+.middle .links li:hover i {
+  color: var(--darkgreen);
+}
+
+/* Footer right */
+
+.right form {
+  display: flex;
+}
+
+.right form input {
+  /* flex: 2; */
+  margin-right: 20px;
+  width: 65%;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.right form button {
+  /* flex: 1.5; */
+  text-decoration: none;
+  background-color: var(--lightgreen);
+  padding: 15px;
+  border-radius: 25px;
+  color: #fff;
+  transition: 0.5s;
+  width: 25%;
+}
+
+.right form button:hover {
+  background-color: var(--orange);
+}
+
+.right form button:active {
+  background-color: var(--lightgreen);
+}
+
+/* Bottom part designed by section */
+
+.desgnedby {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.desgnedby p a {
+  text-decoration: underline;
+  color: var(--darkgreen);
+  transition: 0.5s;
+}
+
+.desgnedby p a:hover {
+  color: var(--lightgreen);
+}
+
+.desgnedby p i {
+  color: rgba(234, 8, 8, 0.8);
+}

@@ -85,6 +85,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: my_kuku_production
   username: my_kuku
   password: <%= ENV["MY_KUKU_DATABASE_PASSWORD"] %>

@@ -1,4 +1,5 @@
 /* Styling for the home blogs section */
+/* stylelint-disable no-descending-specificity */
 
 :root {
   --black: rgba(10, 10, 10, 0.8);

@@ -1,0 +1,180 @@
+<main class="main">
+  <section class="landing">
+    <div class="landingWrap">
+      <p class="orange">No antibiotics, no growth stimulants</p>
+      <h1>Fresh eggs for you everyday!</h1>
+      <p>Authentic free range Kienyeji chicken</p>
+      <%= link_to "Contact Us", "#", class: ""%>
+    </div>
+  </section>
+
+  <section class="welcome">
+    <div class="welcomeHeader">
+      <h4 class="lightgreentext">Quality eggs at wholesale prices</h4>
+      <h2 class="darkgreentext">Welcome to our Poultry farm</h2>
+      <p class="lightgraytext">Do you like organically reared chicken?<p>
+    </div>
+
+    <article class="welcometop">
+      <div class="welcometopLeft">
+        <%= image_tag("freerangehens.jpg", alt: "Woman holding chicken") %>
+      </div>
+      <div class="welcometopRight">
+        <div class="welcometopLeftCard">
+          <h3 class="darkgreentext">We supplyto restaurants, cafes, bakeries and even independent supermarkets</h3>
+          <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet aliquam repellendus quam nisi consectetur? Vitae, ratione laboriosam!</p>
+        </div>
+
+        <div class="welcometopLeftCard">
+          <h3 class="darkgreentext">We promise you a reliable delivery of quality eggs at wholesale prices</h3>
+          <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet aliquam repellendus quam nisi consectetur? Vitae, ratione laboriosam!</p>
+        </div>
+
+        <div class="welcometopLeftContact">
+          <div class="left">
+            <p><i class="fa fa-phone" aria-hidden="true"></i></p>
+          </div>
+
+          <div class="right">
+            <h3 class="orangetext">How to order?</h3>
+            <h3 class="darkgreentext">+254723456263</h3>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="welcometopbottom">
+      <div class="left">
+        <h4 class="lightgreentext">Providing quality Poultry since 2015</h4>
+        <h2 class="darkgreentext">As the owner of eggs and poultry farm, I personally take care of the products we offer our clients and partners</h2>
+        <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet aliquam repellendus quam nisi consectetur? Vitae, ratione laboriosam!</p>
+        <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet aliquam repellendus quam nisi consectetur? Vitae, ratione laboriosam!</p>
+        <p class="aboutlink"><%= link_to "Read about us", abouts_path %></p>
+      </div>
+      <div class="right">
+        <%= image_tag("womanholdingtwochicken.jpg", alt: "Woman holding chicken") %>
+        <p>Our poultry is fed on an entirely vegetarian diet</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="whychooseus">
+    <div class="reason">
+      <p class="lightgreentext"><i class="fa fa-list-alt" aria-hidden="true"></i></p>
+      <h4>Products range</h4>
+      <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet</p>
+    </div>
+
+    <div class="reason">
+      <p class="lightgreentext"><i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+      <h4>Quality matters</h4>
+      <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet</p>
+    </div>
+
+    <div class="reason">
+      <p class="lightgreentext"><i class="fa fa-smile-o" aria-hidden="true"></i></p>
+      <h4>Customer satisfaction</h4>
+      <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet</p>
+    </div>
+
+    <div class="reason">
+      <p class="lightgreentext"><i class="fa fa-truck" aria-hidden="true"></i></p>
+      <h4>Free shipping</h4>
+      <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet</p>
+    </div>
+  </section>
+
+  <section class="homestats">
+    <div class="headercentered">
+      <h4 class="lightgreentext">High quality eggs</h4>
+      <h2 class="darkgreentext">Our numbers prove the constant improvement in the quality of our products</h2>
+      <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet</p>
+    </div>
+
+    <div class="farmstats">
+      <div class="stats">
+        <h2>46K</h2>
+        <p>Areas</p>
+      </div>
+
+      <div class="stats">
+        <h2>8+</h2>
+        <p>Experience</p>
+      </div>
+
+      <div class="stats">
+        <h2>30T</h2>
+        <p>Products</p>
+      </div>
+
+      <div class="stats">
+        <h2>10K</h2>
+        <p>Customers</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="homegallery">
+    <div class="headercentered">
+      <h4 class="lightgreentext">Our gallery</h4>
+      <h2 class="darkgreentext">Get to know our farm</h2>
+    </div>
+
+    <div class="gallery">
+      <% @images.each do |name, path| %>
+        <%= image_tag("farmimages/#{path}", alt: name) %>
+      <% end %>
+    </div>
+  </section>
+
+  <section class="homeblogs">
+    <div class="blogstitle">
+      <div class="left">
+        <h4 class="lightgreentext">Our blog</h4>
+        <h2 class="darkgreentext">Latest News</h2>
+      </div>
+      <div class="right">
+        <p><a href="#">MORE POSTS</a></p>
+      </div>
+    </div>
+
+    <div class="blogs">
+      <div class="blog">
+        <%= image_tag("farmimages/farmimg4.jpg", alt: "Blog image") %>
+        <h3 class="darkgreentext">Water Consumption Rate for Layers and Broilers For Optimal Output </h3>
+        <p class="italics">October 10, 2022 - No Comments</p>
+        <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet</p>
+        <p class="bloglink"><a href="#">READ MORE</a><i class="fa fa-arrow-right" aria-hidden="true"></i></p>
+      </div>
+
+      <div class="blog">
+        <%= image_tag("womanholdingchicken.jpg", alt: "Blog image") %>
+        <h3 class="darkgreentext">Are Broiler Egg Good for Your Health or Not? Let's Find Out </h3>
+        <p class="italics">October 10, 2022 - No Comments</p>
+        <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet</p>
+        <p class="bloglink"><a href="#">READ MORE</a><i class="fa fa-arrow-right" aria-hidden="true"></i></p>
+      </div>
+
+      <div class="blog">
+        <%= image_tag("farmimages/farmimg4.jpg", alt: "Blog image") %>
+        <h3 class="darkgreentext">12 Best Heritage Turkey Breeds With Unique Tempraments </h3>
+        <p class="italics">October 10, 2022 - No Comments</p>
+        <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet</p>
+        <p class="bloglink"><a href="#">READ MORE</a><i class="fa fa-arrow-right" aria-hidden="true"></i></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="homecontact">
+    <div class="left">
+      <h2 class="orangetext">We supply your business with fresh products </h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet</p>
+    </div>
+
+    <div class="right">
+      <p><a href="#">CONTACT US</a></p>
+    </div>
+  </section>
+</main>
+
+

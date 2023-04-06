@@ -13,3 +13,60 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+:root {
+  --darkgreen: rgba(30, 71, 25, 1);
+  --orange: rgba(246, 206, 33, 1);
+  --lightgreen: rgba(132, 194, 36, 1);
+  --lightgray: rgb(90, 78, 78);
+  --greenoverlaytestimonials: rgba(63, 99, 53, 1);
+}
+
+h2 {
+  font-size: 45px;
+}
+
+h3,
+h4 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 19px;
+}
+
+a {
+  font-size: 19px;
+}
+
+.orangetext {
+  color: var(--orange);
+}
+
+.lightgreentext {
+  color: var(--lightgreen);
+}
+
+.darkgreentext {
+  color: var(--darkgreen);
+}
+
+.lightgraytext {
+  color: var(--lightgray);
+}
+
+.main {
+  background-color: rgba(247, 247, 247, 1);
+}

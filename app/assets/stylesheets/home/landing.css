@@ -1,0 +1,71 @@
+/* Styling for the landing section */
+:root {
+  --black: rgba(10, 10, 10, 0.8);
+  --darkgreen: rgba(30, 71, 25, 1);
+  --orange: rgba(246, 206, 33, 1);
+  --lightgreen: rgba(132, 194, 36, 1);
+  --kaushan: 'Kaushan Script', cursive;
+  --alkatra: 'Alkatra', cursive;
+}
+
+/* Styling of the laning page section */
+
+/* .main {
+  position: relative;
+} */
+
+.landing {
+  position: relative;
+  background: linear-gradient(var(--black), var(--black)), url('/assets/eggshome.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 85vh;
+  width: 100%;
+  color: #fff;
+  margin-bottom: 80px;
+}
+
+.landing .landingWrap {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.landing .landingWrap p {
+  font-size: 20px;
+}
+
+.landing .landingWrap h1 {
+  font-size: 50px;
+  font-weight: bolder;
+  width: 100%;
+}
+
+.landing .landingWrap .orange {
+  color: var(--orange);
+  font-family: var(--alkatra);
+}
+
+.landing .landingWrap a {
+  font-size: 19px;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  width: 40px;
+  background-color: var(--lightgreen);
+  transition: 0.5s;
+}
+
+.landing .landingWrap a:hover {
+  background-color: var(--orange);
+}
+
+.landing .landingWrap a:active {
+  background-color: var(--lightgreen);
+}

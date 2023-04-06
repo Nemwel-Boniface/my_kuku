@@ -24,6 +24,8 @@ default: &default
 development:
   <<: *default
   database: my_kuku_development
+  username: nemwel
+  password: root
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,6 +60,8 @@ development:
 test:
   <<: *default
   database: my_kuku_test
+  username: nemwel
+  password: root
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,6 +85,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: my_kuku_production
   username: my_kuku
   password: <%= ENV["MY_KUKU_DATABASE_PASSWORD"] %>

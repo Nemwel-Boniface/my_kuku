@@ -1,0 +1,69 @@
+/* Styling for the home stats section */
+
+:root {
+  --black: rgba(10, 10, 10, 0.8);
+  --darkgreen: rgba(30, 71, 25, 1);
+  --orange: rgba(246, 206, 33, 1);
+  --lightgreen: rgba(132, 194, 36, 1);
+  --kaushan: 'Kaushan Script', cursive;
+  --alkatra: 'Alkatra', cursive;
+}
+
+/* home stats section */
+
+.homestats {
+  background-color: rgba(247, 247, 247, 1);
+  padding: 0 7%;
+  margin: 80px 0;
+}
+
+.headercentered {
+  text-align: center;
+  padding: 0 15%;
+  margin-bottom: 50px;
+}
+
+.headercentered h4 {
+  font-family: var(--alkatra);
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.headercentered h2 {
+  font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.headercentered p {
+  font-size: 20px;
+}
+
+.farmstats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.farmstats .stats {
+  text-align: center;
+  color: #fff;
+  padding: 40px;
+  border-radius: 39% 61% 49% 51% / 75% 31% 69% 25%;
+  background-color: var(--lightgreen);
+  transition: 0.5s;
+}
+
+.farmstats .stats:hover {
+  background-color: var(--orange);
+}
+
+.farmstats .stats h2 {
+  font-weight: bold;
+  font-size: 45px;
+}
+
+.farmstats .stats p {
+  font-weight: bold;
+  font-size: 23px;
+}

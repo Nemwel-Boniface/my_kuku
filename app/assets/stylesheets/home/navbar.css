@@ -1,0 +1,39 @@
+/* Navbar styling */
+
+.header .navbar {
+  width: 100%;
+}
+
+.header .navbar .desktopnav {
+  padding: 2% 5%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--darkgreen);
+}
+
+.header .navbar .desktopnav h2 a {
+  font-size: 30px;
+  color: var(--darkgreen);
+}
+
+.header .navbar .desktopnav ul {
+  display: flex;
+}
+
+.header .navbar .desktopnav ul li {
+  list-style-type: none;
+  margin-left: 2rem;
+  margin-right: 10px;
+}
+
+.header .navbar .desktopnav ul li a {
+  text-decoration: none;
+  color: var(--darkgreen);
+  transition: 0.5s;
+}
+
+.header .navbar .desktopnav ul li a:hover {
+  color: var(--lightgreen);
+}

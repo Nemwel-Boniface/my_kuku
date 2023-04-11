@@ -1,5 +1,114 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Abouts</h1>
+<header class="aboutheader">
+  <h2>About Us</h2>
+  <h3><%= link_to "Home", root_path %> <span>-</span>About Us</h3>
+</header>
 
+<main class="main">
+  <section class="welcome">
+    <div class="welcomeHeader">
+      <h4 class="lightgreentext">Quality eggs at wholesale prices</h4>
+      <h2 class="darkgreentext">Welcome to our Poultry farm</h2>
+      <p class="lightgraytext">Do you like organically reared chicken?<p>
+    </div>
+
+    <article class="welcometop">
+      <div class="welcometopLeft">
+        <%= image_tag("freerangehens.jpg", alt: "Woman holding chicken") %>
+      </div>
+      <div class="welcometopRight">
+        <div class="welcometopLeftCard">
+          <h3 class="darkgreentext">We supplyto restaurants, cafes, bakeries and even independent supermarkets</h3>
+          <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet aliquam repellendus quam nisi consectetur? Vitae, ratione laboriosam!</p>
+        </div>
+
+        <div class="welcometopLeftCard">
+          <h3 class="darkgreentext">We promise you a reliable delivery of quality eggs at wholesale prices</h3>
+          <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet aliquam repellendus quam nisi consectetur? Vitae, ratione laboriosam!</p>
+        </div>
+
+        <div class="welcometopLeftContact">
+          <div class="left">
+            <p><i class="fa fa-phone" aria-hidden="true"></i></p>
+          </div>
+
+          <div class="right">
+            <h3 class="orangetext">How to order?</h3>
+            <h3 class="darkgreentext">+254723456263</h3>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="aboutwelcomemiddle">
+      <div class="left">
+        <h3 class="lightgreentext">Eco-friendly</h3>
+        <h2 class="darkgreentext">We are committed to providing a first-class environment for our birds</h2>
+        <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet aliquam repellendus quam nisi consectetur? Vitae, ratione laboriosam!</p>
+        <div class="checks">
+          <div class="check">
+            <p><i class="fa fa-check" aria-hidden="true"></i></p>
+            <p class="lightgraytext">We have more than 50 partner restaurants and participate in several farmers' markets</p>
+          </div>
+
+          <div class="check">
+            <p><i class="fa fa-check" aria-hidden="true"></i></p>
+            <p class="lightgraytext">Quality poultry on your table through special care in our poultry farm</p>
+          </div>
+        </div>
+
+        <p><a href="#">SEE OUR PRODUCTS</a></p>
+      </div>
+
+      <div class="right">
+        <%= image_tag("freerangehens.jpg", alt: "Free range chicken") %>
+      </div>
+    </article>
+
+    <article class="aboutwelcomeBottom">
+      <div class="left">
+        <%= image_tag("freerangehens.jpg", alt: "Free range chicken") %>
+      </div>
+
+      <div class="right">
+        <h3 class="lightgreentext">Healthy & Happy</h3>
+        <h2 class="darkgreentext">All our birds have free access to nests, perches, scratch areas to dust bathe, water and feed</h2>
+        <p class="lightgraytext">Quality poultry on your table through special care in our poultry farm</p>
+
+        <div class="card">
+          <h3 class="lightgreentext">We are a family business that has been supplying quality poultry since 1983</h3>
+        </div>
+
+        <p><a href="#">CONTACT US</a></p>
+      </div>
+    </article>
+  </section>
+
+  <section class="whychooseus">
+    <div class="reason">
+      <p class="lightgreentext"><i class="fa fa-list-alt" aria-hidden="true"></i></p>
+      <h4>Products range</h4>
+      <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet</p>
+    </div>
+
+    <div class="reason">
+      <p class="lightgreentext"><i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+      <h4>Quality matters</h4>
+      <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet</p>
+    </div>
+
+    <div class="reason">
+      <p class="lightgreentext"><i class="fa fa-smile-o" aria-hidden="true"></i></p>
+      <h4>Customer satisfaction</h4>
+      <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet</p>
+    </div>
+
+    <div class="reason">
+      <p class="lightgreentext"><i class="fa fa-truck" aria-hidden="true"></i></p>
+      <h4>Free shipping</h4>
+      <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet</p>
+    </div>
+  </section>
+</main>
 

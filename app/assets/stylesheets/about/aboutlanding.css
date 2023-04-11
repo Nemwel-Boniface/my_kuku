@@ -1,0 +1,40 @@
+/* Styling for the about landing section */
+:root {
+  --black: rgba(10, 10, 10, 0);
+  --darkgreen: rgba(30, 71, 25, 1);
+  --orange: rgba(246, 206, 33, 1);
+  --lightgreen: rgba(132, 194, 36, 1);
+  --kaushan: 'Kaushan Script', cursive;
+  --alkatra: 'Alkatra', cursive;
+}
+
+/* Styling of the about landing page section */
+
+.aboutheader {
+  position: relative;
+  background: url('assets/aboutPage/scenary.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  width: 100%;
+  color: #fff;
+  margin-bottom: 80px;
+  padding: 10% 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.aboutheader h3 {
+  font-size: 24px;
+}
+
+.aboutheader h3 a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+}
+
+.aboutheader h3 span {
+  padding: 0 15px;
+}

@@ -1,0 +1,81 @@
+/* About middle styling */
+
+:root {
+  --black: rgba(10, 10, 10, 0.8);
+  --darkgreen: rgba(30, 71, 25, 1);
+  --orange: rgba(246, 206, 33, 1);
+  --lightgreen: rgba(132, 194, 36, 1);
+  --kaushan: 'Kaushan Script', cursive;
+  --alkatra: 'Alkatra', cursive;
+}
+
+.aboutwelcomemiddle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+/* Left section */
+
+.aboutwelcomemiddle .left h3 {
+  font-family: var(--alkatra);
+  font-size: 30px;
+}
+
+.aboutwelcomemiddle .left h3,
+p,
+h2 {
+  margin-bottom: 20px;
+}
+
+.aboutwelcomemiddle .left .checks {
+  margin: 20px 0;
+}
+
+.aboutwelcomemiddle .left .checks .check {
+  display: flex;
+  gap: 30px;
+  margin: 15px 0;
+}
+
+.aboutwelcomemiddle .left .checks .check p i {
+  background-color: var(--darkgreen);
+  padding: 15px;
+  font-size: 22px;
+  color: #fff;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+.aboutwelcomemiddle .left .checks .check p i:hover {
+  background-color: var(--orange);
+}
+
+.aboutwelcomemiddle .left p a {
+  /* flex: 1.5; */
+  text-decoration: none;
+  background-color: var(--lightgreen);
+  padding: 15px;
+  border-radius: 25px;
+  color: #fff;
+  transition: 0.5s;
+  width: 25%;
+}
+
+.aboutwelcomemiddle .left p a:hover {
+  background-color: var(--orange);
+}
+
+.aboutwelcomemiddle .left p a:active {
+  background-color: var(--lightgreen);
+}
+
+/* About middle right */
+
+.aboutwelcomemiddle .right img {
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  border-radius: 66% 34% 42% 58% / 59% 69% 31% 41%;
+}

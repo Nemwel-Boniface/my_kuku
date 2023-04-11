@@ -1,6 +1,6 @@
 /* Styling for the about landing section */
 :root {
-  --black: rgba(10, 10, 10, 0.0);
+  --black: rgba(10, 10, 10, 0);
   --darkgreen: rgba(30, 71, 25, 1);
   --orange: rgba(246, 206, 33, 1);
   --lightgreen: rgba(132, 194, 36, 1);
@@ -12,7 +12,7 @@
 
 .aboutheader {
   position: relative;
-  background:  url('assets/aboutPage/scenary.jpg');
+  background: url('assets/aboutPage/scenary.jpg');
   background-size: cover;
   background-position: center;
   height: 60vh;

@@ -22,7 +22,9 @@
   font-size: 30px;
 }
 
-.aboutwelcomemiddle .left h3, p, h2 {
+.aboutwelcomemiddle .left h3,
+p,
+h2 {
   margin-bottom: 20px;
 }
 
@@ -32,7 +34,7 @@
 
 .aboutwelcomemiddle .left .checks .check {
   display: flex;
-  gap: 30px;  
+  gap: 30px;
   margin: 15px 0;
 }
 
@@ -67,7 +69,6 @@
 .aboutwelcomemiddle .left p a:active {
   background-color: var(--lightgreen);
 }
-
 
 /* About middle right */
 

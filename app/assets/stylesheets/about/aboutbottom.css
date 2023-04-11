@@ -1,0 +1,69 @@
+/* About bottom styling */
+
+:root {
+  --black: rgba(10, 10, 10, 0.8);
+  --darkgreen: rgba(30, 71, 25, 1);
+  --orange: rgba(246, 206, 33, 1);
+  --lightgreen: rgba(132, 194, 36, 1);
+  --kaushan: 'Kaushan Script', cursive;
+  --alkatra: 'Alkatra', cursive;
+}
+
+.aboutwelcomeBottom {
+  padding: 80px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+/* Left styling */
+
+.aboutwelcomeBottom .left img {
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  border-radius: 79% 21% 21% 79% / 65% 32% 68% 35%;
+}
+
+/* right */
+
+.aboutwelcomeBottom .right h3 {
+  font-family: var(--alkatra);
+  font-size: 30px;
+}
+
+.aboutwelcomeBottom .right h3, p, h2 {
+  margin-bottom: 20px;
+}
+
+.aboutwelcomeBottom .right .card {
+  background-color: #fff;
+  padding: 5%;
+  border-left: 10px solid var(--lightgreen);
+  border-radius: 15px;
+  margin: 20px 0 40px 0;
+}
+
+.aboutwelcomeBottom .right p {
+  margin-top: 20px;
+}
+
+.aboutwelcomeBottom .right p a {
+  /* flex: 1.5; */
+  text-decoration: none;
+  background-color: var(--lightgreen);
+  padding: 15px;
+  border-radius: 25px;
+  color: #fff;
+  transition: 0.5s;
+  width: 25%;
+}
+
+.aboutwelcomeBottom .right p a:hover {
+  background-color: var(--orange);
+}
+
+.aboutwelcomeBottom .right p a:active {
+  background-color: var(--lightgreen);
+}

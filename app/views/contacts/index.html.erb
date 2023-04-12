@@ -2,13 +2,3 @@
 
 <h1>Contacts</h1>
 
-<div id="contacts">
-  <% @contacts.each do |contact| %>
-    <%= render contact %>
-    <p>
-      <%= link_to "Show this contact", contact %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New contact", new_contact_path %>

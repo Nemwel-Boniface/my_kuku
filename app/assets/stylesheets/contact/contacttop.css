@@ -1,0 +1,54 @@
+/* Styling for the contact us section */
+
+:root {
+  --black: rgba(10, 10, 10, 0.8);
+  --darkgreen: rgba(30, 71, 25, 1);
+  --orange: rgba(246, 206, 33, 1);
+  --lightgreen: rgba(132, 194, 36, 1);
+  --kaushan: 'Kaushan Script', cursive;
+  --alkatra: 'Alkatra', cursive;
+}
+
+/* contact us section */
+
+.contactMain {
+  background-color: rgba(247, 247, 247, 1);
+  padding: 0 3%;
+}
+
+.contactMain .contactTop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.contactMain .contactTop .left .contactCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contactMain .contactTop .left .contactCards .card {
+  outline: none;
+  border: none;
+  padding: 5%;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.contactMain .contactTop .left .contactCards .card .contacticon {
+  color: var(--lightgreen);
+  margin: 15px 0;
+}
+
+.contactMain .contactTop .left .contactCards .card .contacticon i {
+  font-size: 45px;
+}
+
+.contactMain .contactTop .left .contactCards .card p {
+  margin: 10px 0;
+}
+
+.contactMain .contactTop .left .contactCards .card h3 {
+  font-size: 28px;
+}

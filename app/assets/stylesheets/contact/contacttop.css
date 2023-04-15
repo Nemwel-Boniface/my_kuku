@@ -52,3 +52,32 @@
 .contactMain .contactTop .left .contactCards .card h3 {
   font-size: 28px;
 }
+
+/* Contact us contactRight section */
+
+.contactMain .contactTop .contactRight h3, h2 {
+  margin: 15px 0;
+}
+
+.contactMain .contactTop .contactRight form input, textarea {
+  padding: 2%;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.contactMain .contactTop .contactRight form .contactBtn {
+  text-decoration: none;
+  background-color: var(--lightgreen);
+  padding: 15px;
+  border-radius: 25px;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.contactMain .contactTop .contactRight form .contactBtn:hover {
+  background-color: var(--orange);
+}
+
+.contactMain .contactTop .contactRight form .contactBtn:active {
+  background-color: var(--lightgreen);
+}

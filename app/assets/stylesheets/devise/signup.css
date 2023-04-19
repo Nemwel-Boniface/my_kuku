@@ -1,0 +1,79 @@
+/* Styling for the devise signup section */
+/* stylelint-disable no-descending-specificity */
+
+:root {
+  --black: rgba(10, 10, 10, 0.8);
+  --darkgreen: rgba(30, 71, 25, 1);
+  --orange: rgba(246, 206, 33, 1);
+  --lightgreen: rgba(132, 194, 36, 1);
+  --kaushan: 'Kaushan Script', cursive;
+  --alkatra: 'Alkatra', cursive;
+}
+
+/* devise signup section */
+
+.devise {
+  padding: 3%;
+  background-color: rgba(247, 247, 247, 1);
+  width: 100%;
+}
+
+.devise .header {
+  margin: 20px 0 50px 0;
+  text-align: center;
+  color: var(--darkgreen);
+  font-weight: bold;
+}
+
+.signup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+/* Signup left section with the image */
+
+.signup .signupleft img {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+/* Sign up right with the form */
+
+.signup .signupright h2 {
+  margin: 20px 0;
+  color: var(--darkgreen);
+}
+
+.signupright form .signupinput {
+  margin: 20px;
+}
+
+.signupright form .signupinput input {
+  width: 100%;
+  padding: 10px;
+}
+
+.signupright form .signupinput label {
+  font-size: 20px;
+}
+
+.signupright form .devisesubmit input {
+  text-decoration: none;
+  background-color: var(--lightgreen);
+  padding: 15px;
+  border-radius: 25px;
+  color: #fff;
+  transition: 0.5s;
+  margin-left: 5%;
+}
+
+.signupright form .devisesubmit input:hover {
+  background-color: var(--orange);
+}
+
+.signupright form .devisesubmit input:active {
+  background-color: var(--lightgreen);
+}

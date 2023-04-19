@@ -4,17 +4,27 @@
       <h2><%= link_to 'My Kuku', root_path, class: "navbar-brand"%></h2>
       <ul>
         <li class="nav-item">
+          <%= link_to 'Home', root_path, class: ""%>
+        </li>|
+        <li class="nav-item">
           <%= link_to "About Us", abouts_path, class: ""%>
         </li>|
         <li class="nav-item">
           <%= link_to "Contact us", contacts_path, class: ""%>
         </li>|
-        <li class="nav-item">
-          <%= link_to "Sign In", "#", class: ""%>
-        </li>|
-        <li class="nav-item">
-          <%= link_to "About Us", "#", class: ""%>
-        </li>
+
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Posts", "#", class: ""%>
+          </li>|
+          <li class="nav-item">
+            <%= link_to "Sign out", destroy_user_session_path, class: 'nav-link', data: { turbo_method: :delete } %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign in", new_user_session_path, class: ""%>
+          </li>
+        <% end %>
       </ul>
     </div>
   </nav>

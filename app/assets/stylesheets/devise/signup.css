@@ -60,7 +60,7 @@
   font-size: 20px;
 }
 
-.signupright form .devisesubmit input {
+.devisesubmit input {
   text-decoration: none;
   background-color: var(--lightgreen);
   padding: 15px;
@@ -70,10 +70,10 @@
   margin-left: 5%;
 }
 
-.signupright form .devisesubmit input:hover {
+.devisesubmit input:hover {
   background-color: var(--orange);
 }
 
-.signupright form .devisesubmit input:active {
+.devisesubmit input:active {
   background-color: var(--lightgreen);
 }

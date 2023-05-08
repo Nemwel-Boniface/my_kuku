@@ -1,0 +1,58 @@
+/* Styling for the devise signin section */
+/* stylelint-disable no-descending-specificity */
+
+:root {
+  --black: rgba(10, 10, 10, 0.8);
+  --darkgreen: rgba(30, 71, 25, 1);
+  --orange: rgba(246, 206, 33, 1);
+  --lightgreen: rgba(132, 194, 36, 1);
+  --kaushan: 'Kaushan Script', cursive;
+  --alkatra: 'Alkatra', cursive;
+}
+
+/* devise signin section */
+
+.devise .signIn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+/* Devise signin left with image section */
+
+.devise .signIn .signInLeft img {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+/* Devise signin right with form */
+
+.devise .signIn .signinRight h2 {
+  margin: 20px 0;
+  color: var(--darkgreen);
+}
+
+.devise .signIn .signinRight form .signinInput {
+  margin: 20px;
+}
+
+.devise .signIn .signinRight form .signinInput input {
+  width: 100%;
+  padding: 10px;
+}
+
+.devise .signIn .signinRight form .signincheckbox {
+  display: flex;
+  margin-left: 5%;
+}
+
+.devise .signIn .signinRight form .signincheckbox label {
+  font-size: 20px;
+  margin-left: 15px;
+}
+
+.devise .signIn .signinRight form .signincheckbox .checkbox {
+  font-size: 30px;
+}

@@ -1,0 +1,37 @@
+<main class="devise">
+  <h2 class="header">It's great seeing you back!</h2>
+
+  <section class="signIn">
+    <div class="signInLeft">
+      <%= image_tag("devise/login.png", alt: "Sign in page image") %>
+    </div>
+
+    <div class="signinRight">
+      <h2>Let's log you to your account now</h2>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="signinInput">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "example@youremail.com" %>
+        </div>
+
+        <div class="signinInput">
+          <%= f.password_field :password, autocomplete: "current-password", placeholder: "Your password" %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="signincheckbox">
+            <%= f.check_box :remember_me, class: "checkbox" %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+
+        <div class="devisesubmit">
+          <%= f.submit "Log in" %>
+        </div>
+      <% end %>
+    </div>
+  </section>
+
+  <%= render "devise/shared/links" %>
+
+</main>

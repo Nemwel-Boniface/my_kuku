@@ -5,9 +5,13 @@
   <h3><%= link_to "Home", root_path %> <span>-</span>Our Blogs</h3>
 </header>
 
-<%= link_to "New blog", new_blog_path %>
-
 <main class="blogsPage">
+
+  <div class="newbloglink">
+    <h2 class="darkgreentext">Let's create a new blog</h2>
+    <p><%= link_to "New blog", new_blog_path %></p>
+  </div>
+
   <section class="blogs">
     <div class="blog">
       <%= image_tag("farmimages/farmimg4.jpg", alt: "Blog image") %>

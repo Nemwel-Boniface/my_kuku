@@ -17,3 +17,29 @@
   padding: 0 3%;
   margin: 80px 0;
 }
+
+/* Align the new blog link to the right */
+
+.blogsPage .newbloglink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.blogsPage .newbloglink p a {
+  text-decoration: none;
+  background-color: var(--lightgreen);
+  padding: 15px;
+  border-radius: 25px;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.blogsPage .newbloglink p a:hover {
+  background-color: var(--orange);
+}
+
+.blogsPage .newbloglink p a:active {
+  background-color: var(--lightgreen);
+}

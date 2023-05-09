@@ -7,10 +7,12 @@
 
 <main class="blogsPage">
 
-  <div class="newbloglink">
-    <h2 class="darkgreentext">Let's create a new blog</h2>
-    <p><%= link_to "New blog", new_blog_path %></p>
-  </div>
+  <% if user_signed_in? %>
+    <div class="newbloglink">
+      <h2 class="darkgreentext">Let's create a new blog</h2>
+      <p><%= link_to "New blog", new_blog_path %></p>
+    </div>
+  <% end %>
 
   <section class="blogs">
     <div class="blog">

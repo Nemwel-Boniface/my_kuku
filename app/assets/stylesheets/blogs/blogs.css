@@ -1,0 +1,19 @@
+/* Styling for the home blogs section */
+/* stylelint-disable no-descending-specificity */
+
+:root {
+  --black: rgba(10, 10, 10, 0.8);
+  --darkgreen: rgba(30, 71, 25, 1);
+  --orange: rgba(246, 206, 33, 1);
+  --lightgreen: rgba(132, 194, 36, 1);
+  --kaushan: 'Kaushan Script', cursive;
+  --alkatra: 'Alkatra', cursive;
+}
+
+/* home blogs section */
+
+.blogsPage {
+  background-color: rgba(247, 247, 247, 1);
+  padding: 0 3%;
+  margin: 80px 0;
+}

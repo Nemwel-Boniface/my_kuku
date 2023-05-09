@@ -1,14 +1,36 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Blogs</h1>
-
-<div id="blogs">
-  <% @blogs.each do |blog| %>
-    <%= render blog %>
-    <p>
-      <%= link_to "Show this blog", blog %>
-    </p>
-  <% end %>
-</div>
+<header class="aboutheader">
+  <h2>Our Blogs</h2>
+  <h3><%= link_to "Home", root_path %> <span>-</span>Our Blogs</h3>
+</header>
 
 <%= link_to "New blog", new_blog_path %>
+
+<main class="blogsPage">
+  <section class="blogs">
+    <div class="blog">
+      <%= image_tag("farmimages/farmimg4.jpg", alt: "Blog image") %>
+      <h3 class="darkgreentext">Water Consumption Rate for Layers and Broilers For Optimal Output </h3>
+      <p class="italics">October 10, 2022 - No Comments</p>
+      <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet</p>
+      <p class="bloglink"><a href="#">READ MORE</a><i class="fa fa-arrow-right" aria-hidden="true"></i></p>
+    </div>
+
+    <div class="blog">
+      <%= image_tag("womanholdingchicken.jpg", alt: "Blog image") %>
+      <h3 class="darkgreentext">Are Broiler Egg Good for Your Health or Not? Let's Find Out </h3>
+      <p class="italics">October 10, 2022 - No Comments</p>
+      <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet</p>
+      <p class="bloglink"><a href="#">READ MORE</a><i class="fa fa-arrow-right" aria-hidden="true"></i></p>
+    </div>
+
+    <div class="blog">
+      <%= image_tag("farmimages/farmimg4.jpg", alt: "Blog image") %>
+      <h3 class="darkgreentext">12 Best Heritage Turkey Breeds With Unique Tempraments </h3>
+      <p class="italics">October 10, 2022 - No Comments</p>
+      <p class="lightgraytext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad cumque, eveniet</p>
+      <p class="bloglink"><a href="#">READ MORE</a><i class="fa fa-arrow-right" aria-hidden="true"></i></p>
+    </div>
+  </section>
+</main>

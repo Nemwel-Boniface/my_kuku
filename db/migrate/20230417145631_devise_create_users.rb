@@ -35,7 +35,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.string :names
       t.string :profile_photo
       t.string :role, default: "user"
-      t.integer :posts_counter, default: 0
+      t.integer :blogs_counter, default: 0
       t.integer :mobile_number
       t.string :status, default: "active"
       t.string :location

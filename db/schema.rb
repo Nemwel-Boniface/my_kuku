@@ -85,7 +85,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_08_181831) do
     t.string "names"
     t.string "profile_photo"
     t.string "role", default: "user"
-    t.integer "posts_counter", default: 0
+    t.integer "blogs_counter", default: 0
     t.integer "mobile_number"
     t.string "status", default: "active"
     t.string "location"

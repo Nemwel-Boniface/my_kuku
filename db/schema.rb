@@ -50,6 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_08_181831) do
   create_table "blogs", force: :cascade do |t|
     t.string "blog_image"
     t.string "blog_title"
+    t.string "blog_intro"
     t.date "date_created"
     t.integer "comments_counter", default: 0
     t.text "blog_text"

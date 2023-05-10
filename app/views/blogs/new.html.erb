@@ -31,6 +31,11 @@
           </div>
 
           <div class="blogform">
+            <%= form.label :blog_intro, style: "display: block" %>
+            <%= form.text_field :blog_intro, placeholder: "The intro will be displayed in the home page as the blog introduction. Should be max 20 words." %>
+          </div>
+
+          <div class="blogform">
             <%= form.label :date_created, style: "display: block" %>
             <%= form.date_field :date_created %>
           </div>

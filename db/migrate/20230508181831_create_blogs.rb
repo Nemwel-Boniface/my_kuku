@@ -3,6 +3,7 @@ class CreateBlogs < ActiveRecord::Migration[7.0]
     create_table :blogs do |t|
       t.string :blog_image
       t.string :blog_title
+      t.string :blog_intro
       t.date :date_created
       t.integer :comments_counter, default: 0
       t.text :blog_text

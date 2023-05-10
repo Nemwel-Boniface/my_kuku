@@ -1,0 +1,68 @@
+/* Styling for the home blogs section */
+/* stylelint-disable no-descending-specificity */
+
+:root {
+  --black: rgba(10, 10, 10, 0.8);
+  --darkgreen: rgba(30, 71, 25, 1);
+  --orange: rgba(246, 206, 33, 1);
+  --lightgreen: rgba(132, 194, 36, 1);
+  --kaushan: 'Kaushan Script', cursive;
+  --alkatra: 'Alkatra', cursive;
+}
+
+/* new blogs page top section with image */
+
+.blogsPage .newblog .newblogleft {
+  margin: 40px 0;
+}
+
+.blogsPage .newblog .newblogleft h2 {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.blogsPage .newblog .newblogleft img {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/* New blog styling bottom page with form */
+
+.blogsPage .newblog .newblogright form .blogform {
+  margin: 20px;
+}
+
+.blogsPage .newblog .newblogright form .blogform label {
+  font-size: 22px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.blogsPage .newblog .newblogright form .blogform input {
+  width: 100%;
+  padding: 15px;
+}
+
+.blogsPage .newblog .newblogright form .blogform textarea {
+  height: 50vh;
+}
+
+.blogSubmit input {
+  margin: 20px 0;
+  text-decoration: none;
+  background-color: var(--lightgreen);
+  padding: 15px;
+  border-radius: 25px;
+  color: #fff;
+  transition: 0.5s;
+  width: 100%;
+}
+
+.blogSubmit input:hover {
+  background-color: var(--orange);
+}
+
+.blogSubmit input:active {
+  background-color: var(--lightgreen);
+}

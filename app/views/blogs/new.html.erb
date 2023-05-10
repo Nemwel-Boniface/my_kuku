@@ -3,6 +3,7 @@
     <section class="newblog">
       <div class="newblogleft">
         <%= image_tag("blogs/createnewblog.jpg", alt: "The create a new blog image") %>
+        <h2 class="darkgreentext">My Kuku's new blog</h2>
       </div>
 
       <div class="newblogright">
@@ -19,24 +20,24 @@
             </div>
           <% end %>
 
-          <div>
+          <div class="blogform">
             <%= form.label :blog_image, style: "display: block" %>
             <%= form.file_field :blog_image %>
           </div>
 
-          <div>
+          <div class="blogform">
             <%= form.label :blog_title, style: "display: block" %>
-            <%= form.text_field :blog_title %>
+            <%= form.text_field :blog_title, placeholder: "A good title is ideally around 6 words long." %>
           </div>
 
-          <div>
+          <div class="blogform">
             <%= form.label :date_created, style: "display: block" %>
             <%= form.date_field :date_created %>
           </div>
 
-          <div>
+          <div class="blogform">
             <%= form.label :blog_text, style: "display: block" %>
-            <%= form.text_area :blog_text %>
+            <%= form.text_area :blog_text, placeholder: "Jot your ideas here. Words length not restricted." %>
           </div>
 
           <div>
@@ -47,7 +48,7 @@
             <%= form.number_field :user_id, id: :blog_user_id, value: current_user.id, type: :hidden %>
           </div>
 
-          <div>
+          <div class="blogSubmit">
             <%= form.submit %>
           </div>
         <% end %>

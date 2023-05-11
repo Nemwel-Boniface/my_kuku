@@ -8,6 +8,8 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1 or /blogs/1.json
   def show
+    @blog = Blog.find(params[:id])
+    # @user = User.find_by(@post.user_id)  
   end
 
   # GET /blogs/new

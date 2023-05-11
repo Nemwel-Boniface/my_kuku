@@ -1,10 +1,38 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @blog %>
+<header class="aboutheader">
+  <h2><%= @blog.blog_title %></h2>
+  <h3><%= link_to "Home", root_path %> <span>-</span>Our Blogs</h3>
+</header>
 
-<div>
-  <%= link_to "Edit this blog", edit_blog_path(@blog) %> |
-  <%= link_to "Back to blogs", blogs_path %>
+<main class="blogsPage">
+  <div id="<%= dom_id @blog %>">
+  <p>
+    <% if @blog.blog_image.attached? %>
+      <image src="<%= (url_for(@blog.blog_image))%>">
+    <% end %>
+  </p>
 
-  <%= button_to "Destroy this blog", @blog, method: :delete %>
+  <p>
+    <strong>Date created:</strong>
+    <%= @blog.date_created %>
+  </p>
+
+  <p>
+    <strong>Comments counter:</strong>
+    <%= @blog.comments_counter %>
+  </p>
+
+  <p>
+    <strong>Written by:</strong>
+    <%= @blog.user.names %>
+  </p>
+
+  <p>
+    <strong>Blog text:</strong>
+    <%= @blog.blog_text %>
+  </p>
+
 </div>
+
+</main>

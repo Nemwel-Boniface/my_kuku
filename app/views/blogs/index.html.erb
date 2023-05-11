@@ -15,16 +15,20 @@
   <% end %>
 
   <section class="blogs">
-    <% @blogs.each do |blog| %>
-      <div class="blog">
-        <% if blog.blog_image.attached? %>
-          <image src="<%= (url_for(blog.blog_image))%>">
-        <% end %>
-        <h3 class="darkgreentext"><%= blog.blog_title %></h3>
-        <p class="italics"><%= blog.date_created %> - <%= blog.comments_counter > 0? blog.comments_counter : "No" %> Comments</p>
-        <p class="lightgraytext"><%= blog.blog_intro %></p>
-        <p class="bloglink"><a href="#">READ MORE</a><i class="fa fa-arrow-right" aria-hidden="true"></i></p>
-      </div>
+    <% if @blogs.empty? %>
+      <h2>There are no created blogs yet</h2> 
+    <% else %>
+      <% @blogs.each do |blog| %>
+        <div class="blog">
+          <% if blog.blog_image.attached? %>
+            <image src="<%= (url_for(blog.blog_image))%>">
+          <% end %>
+          <h3 class="darkgreentext"><%= blog.blog_title %></h3>
+          <p class="italics"><%= blog.date_created %> - <%= blog.comments_counter > 0? blog.comments_counter : "No" %> Comments</p>
+          <p class="lightgraytext"><%= blog.blog_intro %></p>
+          <p class="bloglink"><%= link_to "READ MORE", blog_path(blog) %><i class="fa fa-arrow-right" aria-hidden="true"></i></p>
+        </div>
+      <% end %>
     <% end %>
     
   </section>

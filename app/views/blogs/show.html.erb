@@ -6,33 +6,35 @@
 </header>
 
 <main class="blogsPage">
-  <div id="<%= dom_id @blog %>">
-  <p>
-    <% if @blog.blog_image.attached? %>
-      <image src="<%= (url_for(@blog.blog_image))%>">
-    <% end %>
-  </p>
+  <section class="blogAuthor">
+    <div class="blogAuthorLeft">
+      <% if @blog.user.profile_photo.attached? %>
+        <image src="<%= (url_for(@blog.user.profile_photo)) %>">
+      <% end %>
+    </div>
 
-  <p>
-    <strong>Date created:</strong>
-    <%= @blog.date_created %>
-  </p>
+    <div class="blogAuthorRight">
+      <h4 class="darkgreentext"><%= @blog.user.names %></h3>
+      <p class="lightgraytext">Published <%= @blog.date_created %></p>
+    </div>
+  </section>
 
-  <p>
-    <strong>Comments counter:</strong>
-    <%= @blog.comments_counter %>
-  </p>
+  <section class="blogShowBody">
+    <div class="blogImage">
+      <% if @blog.blog_image.attached? %>
+        <image src="<%= (url_for(@blog.blog_image))%>">
+      <% end %>
+    </div>
 
-  <p>
-    <strong>Written by:</strong>
-    <%= @blog.user.names %>
-  </p>
+    <div class="blogBody">
+      <p>
+        <%= @blog.blog_text %>
+      </p>
+    </div>
+  </section>
 
-  <p>
-    <strong>Blog text:</strong>
-    <%= @blog.blog_text %>
-  </p>
-
-</div>
+  <section class="blogComments">
+    <h4><%= @blog.comments_counter > 0? @blog.comments_counter : "No" %> Comments</h4>
+  </section>
 
 </main>

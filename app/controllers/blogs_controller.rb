@@ -8,7 +8,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1 or /blogs/1.json
   def show
-    @blog = Blog.find(params[:id])
+    @blog = Blog.friendly.find(params[:id])
     @paragraphs = @blog.blog_text.split("/")
     # @user = User.find_by(@post.user_id)  
   end
@@ -63,7 +63,7 @@ class BlogsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
-      @blog = Blog.find(params[:id])
+      @blog = Blog.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

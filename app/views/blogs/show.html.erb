@@ -27,9 +27,11 @@
     </div>
 
     <div class="blogBody">
-      <p>
-        <%= @blog.blog_text %>
-      </p>
+      <% @paragraphs.each do |paragraph| %>
+        <p>
+          <%= paragraph.strip %>
+        </p>
+      <% end %>
     </div>
   </section>
 

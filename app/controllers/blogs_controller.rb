@@ -9,6 +9,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1 or /blogs/1.json
   def show
     @blog = Blog.find(params[:id])
+    @paragraphs = @blog.blog_text.split("/")
     # @user = User.find_by(@post.user_id)  
   end
 

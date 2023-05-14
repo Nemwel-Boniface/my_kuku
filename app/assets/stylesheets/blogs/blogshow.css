@@ -1,0 +1,47 @@
+/* Styling for the blogs show page */
+/* stylelint-disable no-descending-specificity */
+
+:root {
+  --black: rgba(10, 10, 10, 0.8);
+  --darkgreen: rgba(30, 71, 25, 1);
+  --orange: rgba(246, 206, 33, 1);
+  --lightgreen: rgba(132, 194, 36, 1);
+  --kaushan: 'Kaushan Script', cursive;
+  --alkatra: 'Alkatra', cursive;
+}
+
+/* blogs show page */
+
+.blogsPage .blogAuthor {
+  margin: 40px 0;
+  display: flex;
+  align-items: center;
+}
+
+.blogsPage .blogAuthor .blogAuthorLeft {
+  margin-right: 30px;
+}
+
+.blogsPage .blogAuthor .blogAuthorLeft img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+
+.blogsPage .blogAuthor .blogAuthorRight {
+  margin: auto 0;
+}
+
+/* Main blog section */
+
+.blogsPage .blogShowBody .blogImage img {
+  width: 100%;
+  max-width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  margin: 40px 0;
+}
+
+.blogsPage .blogShowBody .blogBody p {
+  margin: 20px 0;
+}

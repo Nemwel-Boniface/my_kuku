@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.0'
 
+# Friendly for custom slugs
+
+gem 'friendly_id', '~> 5.4.0'
+
 # rubocop
 
 gem 'rubocop', '>= 1.0', '< 2.0'

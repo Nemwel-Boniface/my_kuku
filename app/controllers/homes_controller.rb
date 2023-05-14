@@ -1,5 +1,6 @@
 class HomesController < ApplicationController
   def index
+    @blogs = Blog.order(created_at: :desc).limit(3)
     @images = {
       image1: 'farmimg1.jpg',
       image2: 'farmimg2.jpg',

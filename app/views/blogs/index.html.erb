@@ -1,0 +1,35 @@
+<p style="color: green"><%= notice %></p>
+
+<header class="aboutheader">
+  <h2>Our Blogs</h2>
+  <h3><%= link_to "Home", root_path %> <span>-</span>Our Blogs</h3>
+</header>
+
+<main class="blogsPage">
+
+  <% if user_signed_in? %>
+    <div class="newbloglink">
+      <h2 class="darkgreentext">Let's create a new blog</h2>
+      <p><%= link_to "New blog", new_blog_path %></p>
+    </div>
+  <% end %>
+
+  <section class="blogs">
+    <% if @blogs.empty? %>
+      <h2>There are no created blogs yet</h2> 
+    <% else %>
+      <% @blogs.each do |blog| %>
+        <div class="blog">
+          <% if blog.blog_image.attached? %>
+            <image src="<%= (url_for(blog.blog_image))%>">
+          <% end %>
+          <h3 class="darkgreentext"><%= blog.blog_title %></h3>
+          <p class="italics"><%= blog.date_created %> - <%= blog.comments_counter > 0? blog.comments_counter : "No" %> Comments</p>
+          <p class="lightgraytext"><%= blog.blog_intro %></p>
+          <p class="bloglink"><%= link_to "READ MORE", blog_path(blog) %><i class="fa fa-arrow-right" aria-hidden="true"></i></p>
+        </div>
+      <% end %>
+    <% end %>
+    
+  </section>
+</main>

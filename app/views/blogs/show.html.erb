@@ -1,0 +1,42 @@
+<p style="color: green"><%= notice %></p>
+
+<header class="aboutheader">
+  <h2><%= @blog.blog_title %></h2>
+  <h3><%= link_to "Home", root_path %> <span>-</span>Our Blogs</h3>
+</header>
+
+<main class="blogsPage">
+  <section class="blogAuthor">
+    <div class="blogAuthorLeft">
+      <% if @blog.user.profile_photo.attached? %>
+        <image src="<%= (url_for(@blog.user.profile_photo)) %>">
+      <% end %>
+    </div>
+
+    <div class="blogAuthorRight">
+      <h4 class="darkgreentext"><%= @blog.user.names %></h3>
+      <p class="lightgraytext">Published <%= @blog.date_created %></p>
+    </div>
+  </section>
+
+  <section class="blogShowBody">
+    <div class="blogImage">
+      <% if @blog.blog_image.attached? %>
+        <image src="<%= (url_for(@blog.blog_image))%>">
+      <% end %>
+    </div>
+
+    <div class="blogBody">
+      <% @paragraphs.each do |paragraph| %>
+        <p>
+          <%= paragraph.strip %>
+        </p>
+      <% end %>
+    </div>
+  </section>
+
+  <section class="blogComments">
+    <h4><%= @blog.comments_counter > 0? @blog.comments_counter : "No" %> Comments</h4>
+  </section>
+
+</main>

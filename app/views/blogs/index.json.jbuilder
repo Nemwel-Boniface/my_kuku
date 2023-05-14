@@ -1,1 +1,1 @@
-json.array! @blogs, partial: "blogs/blog", as: :blog
+json.array! @blogs, partial: 'blogs/blog', as: :blog

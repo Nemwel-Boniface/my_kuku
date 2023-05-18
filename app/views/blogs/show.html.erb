@@ -53,21 +53,21 @@
           </div>
         <% end %>
 
-        <div>
+  <div class="commentForm">
     <%= form.label :comment_text, style: "display: block" %>
-    <%= form.text_field :comment_text, placeholder: "Kindly add your text" %>
+    <%= form.text_area :comment_text, placeholder: "Kindly add your text" %>
   </div>
 
-  <div>
+  <div class="commentForm">
      <%= form.number_field :blog_id, id: :comment_blog_id, value: @blog.id, type: :hidden %>
   </div>
 
-  <div>
+  <div class="commentForm">
     <%= form.label :commenter_name, style: "display: block" %>
     <%= form.text_field :commenter_name, placeholder: "[OPTIONAL]" %>
   </div>
 
-  <div>
+  <div class="blogSubmit">
     <%= form.submit %>
   </div>
 <% end %>

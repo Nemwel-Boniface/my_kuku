@@ -10,6 +10,7 @@ class BlogsController < ApplicationController
   def show
     @blog = Blog.friendly.find(params[:id])
     @paragraphs = @blog.blog_text.split('/')
+    @comment = @blog.comments.build
     # @user = User.find_by(@post.user_id)
   end
 

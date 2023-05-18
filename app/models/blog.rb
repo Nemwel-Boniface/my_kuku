@@ -4,6 +4,7 @@ class Blog < ApplicationRecord
   friendly_id :blog_title, use: :slugged
 
   belongs_to :user
+  has_many :comments
   has_one_attached :blog_image
   after_save :update_blogs_counter
 

@@ -12,7 +12,8 @@
 
 /* blogs comments section */
 
-.blogComments h2, h4 {
+.blogComments h2,
+h4 {
   margin: 40px 0;
 }
 

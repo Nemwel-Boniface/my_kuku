@@ -37,6 +37,41 @@
 
   <section class="blogComments">
     <h4><%= @blog.comments_counter > 0? @blog.comments_counter : "No" %> Comments</h4>
+    <h2 class="darkGreenText">Leave a reply</h2>
+
+    <div class="blogCommentForm">
+      <%= form_with(model: @comment) do |form| %>
+        <% if @comment.errors.any? %>
+          <div style="color: red">
+            <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+            <ul>
+            <% @comment.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+             <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+  <div class="commentForm">
+    <%= form.label :comment_text, style: "display: block" %>
+    <%= form.text_area :comment_text, placeholder: "Kindly add your text" %>
+  </div>
+
+  <div class="commentForm">
+     <%= form.number_field :blog_id, id: :comment_blog_id, value: @blog.id, type: :hidden %>
+  </div>
+
+  <div class="commentForm">
+    <%= form.label :commenter_name, style: "display: block" %>
+    <%= form.text_field :commenter_name, placeholder: "[OPTIONAL]" %>
+  </div>
+
+  <div class="blogSubmit">
+    <%= form.submit %>
+  </div>
+<% end %>
+    </div>    
   </section>
 
 </main>

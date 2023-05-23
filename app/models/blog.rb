@@ -1,7 +1,18 @@
 class Blog < ApplicationRecord
+  # validations
+  validates :blog_image, presence: true
+  validates :blog_title, presence: true
+  validates :blog_intro, presence: true
+  validates :date_created, presence: true
+  validates :comments_counter, presence: true, numericality: { only_integer: true }
+  validates :blog_text, presence: true
+  validates :user_id, presence: true, numericality: { only_integer: true }
+
   # Friendly for the custom slug
   extend FriendlyId
   friendly_id :blog_title, use: :slugged
+
+  # associations
 
   belongs_to :user
   has_many :comments

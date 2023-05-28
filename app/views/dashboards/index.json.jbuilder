@@ -1,1 +1,1 @@
-json.array! @dashboards, partial: "dashboards/dashboard", as: :dashboard
+json.array! @dashboards, partial: 'dashboards/dashboard', as: :dashboard

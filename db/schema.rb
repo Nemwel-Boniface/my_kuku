@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_14_134710) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_29_061741) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -62,6 +62,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_14_134710) do
     t.index ["user_id"], name: "index_blogs_on_user_id"
   end
 
+  create_table "chickens", force: :cascade do |t|
+    t.integer "tag_number"
+    t.string "chicken_images"
+    t.integer "age", default: 0
+    t.date "date_hatched"
+    t.integer "parent_id"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_chickens_on_user_id"
+  end
+
   create_table "comments", force: :cascade do |t|
     t.text "comment_text"
     t.string "commenter_name", default: "Anonymous"
@@ -72,6 +84,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_14_134710) do
   end
 
   create_table "contacts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dashboards", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -121,5 +138,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_14_134710) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "blogs", "users"
+  add_foreign_key "chickens", "users"
   add_foreign_key "comments", "blogs"
 end

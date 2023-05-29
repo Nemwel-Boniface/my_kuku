@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tag_number: 1
+  chicken_images: MyString
+  age: 1
+  date_hatched: 2023-05-29
+  parent_id: 1
+
+two:
+  tag_number: 1
+  chicken_images: MyString
+  age: 1
+  date_hatched: 2023-05-29
+  parent_id: 1

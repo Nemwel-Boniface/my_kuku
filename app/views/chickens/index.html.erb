@@ -5,15 +5,41 @@
   <h3><%= link_to "Home", root_path %> <span>-</span>Chickens</h3>
 </header>
 
-<h1>Chickens</h1>
+<main class="chickens">
+  <section >
+    <% @chickens.each do |chicken| %>
+      <p>
+        <strong>Tag number:</strong>
+        <%= chicken.tag_number %>
+      </p>
 
-<div id="chickens">
-  <% @chickens.each do |chicken| %>
-    <%= render chicken %>
-    <p>
-      <%= link_to "Show this chicken", chicken %>
-    </p>
-  <% end %>
-</div>
+      <p>
+        <strong>Chicken images:</strong>
+        <%= chicken.chicken_images %>
+      </p>
+
+      <p>
+        <strong>Age:</strong>
+        <%= chicken.age %>
+      </p>
+
+      <p>
+        <strong>Date hatched:</strong>
+        <%= chicken.date_hatched %>
+      </p>
+
+      <p>
+        <strong>Parent:</strong>
+        <%= chicken.parent_id %>
+      </p>
+      <p>
+        <%= link_to "Show this chicken", chicken %>
+      </p>
+    <% end %>
+    
+
+  </section>
+
+</main>
 
 <%= link_to "New chicken", new_chicken_path %>

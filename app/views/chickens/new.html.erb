@@ -1,9 +1,63 @@
-<h1>New chicken</h1>
+<% if user_signed_in? %>
+  <main class="chickensPage">
+    <section class="newChicken">
+      <div class="newChickenLeft">
+        <h2>This side will be updated</h2>
+      </div>
 
-<%= render "form", chicken: @chicken %>
+      <div class="newChickenRight">
+        <%= form_with(model: @chicken) do |form| %>
+          <% if @chicken.errors.any? %>
+            <div style="color: red">
+              <h2><%= pluralize(@chicken.errors.count, "error") %> prohibited this chicken from being saved:</h2>
 
-<br>
+              <ul>
+                <% @chicken.errors.each do |error| %>
+                  <li><%= error.full_message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
 
-<div>
-  <%= link_to "Back to chickens", chickens_path %>
-</div>
+          <div class="blogform">
+            <%= form.label :tag_number, style: "display: block" %>
+            <%= form.text_field :tag_number %>
+          </div>
+
+          <div class="blogform">
+            <%= form.label :chicken_images, style: "display: block" %>
+            <%= form.text_field :chicken_images %>
+          </div>
+
+          <div class="blogform">
+            <%= form.label :age, style: "display: block" %>
+            <%= form.text_field :age %>
+          </div>
+
+          <div class="blogform">
+            <%= form.label :date_hatched, style: "display: block" %>
+            <%= form.date_field :date_hatched %>
+          </div>
+
+          <div class="blogform">
+            <%= form.label :parent_id, style: "display: block" %>
+            <%= form.text_field :parent_id %>
+          </div>
+
+          <div>
+            <%= form.number_field :user_id, id: :chicken_user_id, value: current_user.id %>
+          </div>
+
+          <p>
+            <%= form.submit %>
+          </p>
+        <% end %>
+      </div>
+    </section>
+  </main>
+<% else %>
+
+  <main class="chickensPage">
+    <p>Kindly login to create a chicken</p>
+  </main>
+<% end %>

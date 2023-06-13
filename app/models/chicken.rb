@@ -10,6 +10,8 @@ class Chicken < ApplicationRecord
     # Get the current date in the month
     current_date = Date.today.strftime('%d')
 
+    id = Chicken.count + 1
+
     # Let's append a few zeros before the ID of the record being created
     tag_number_with_zeros = format('%03d', id)
 

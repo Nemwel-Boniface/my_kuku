@@ -1,4 +1,9 @@
 class Chicken < ApplicationRecord
+  # Associations
+  belongs_to :user
+  has_many_attached :chicken_images
+
+  # Callback for custom methods
   before_create :generate_tag_number
 
   private

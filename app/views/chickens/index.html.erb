@@ -14,8 +14,14 @@
       </p>
 
       <p>
-        <strong>Chicken images:</strong>
-        <%= chicken.chicken_images %>
+        <% @chickens.each do |chicken| %>
+          <% chicken.chicken_images_attachments.each do |attachment| %>
+            <% if attachment.blob.present? %>
+              <img src="<%= url_for(attachment.blob) %>">
+            <% end %>
+          <% end %>
+        <% end %>
+        
       </p>
 
       <p>

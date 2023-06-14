@@ -1,7 +1,7 @@
 class CreateChickens < ActiveRecord::Migration[7.0]
   def change
     create_table :chickens do |t|
-      t.integer :tag_number
+      t.string :tag_number
       t.string :chicken_images
       t.integer :age, default: 0
       t.date :date_hatched

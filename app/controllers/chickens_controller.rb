@@ -8,6 +8,7 @@ class ChickensController < ApplicationController
 
   # GET /chickens/1 or /chickens/1.json
   def show
+    @chicken = Chicken.friendly.find(params[:id])
   end
 
   # GET /chickens/new
@@ -60,7 +61,7 @@ class ChickensController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_chicken
-      @chicken = Chicken.find(params[:id])
+      @chicken = Chicken.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

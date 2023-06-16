@@ -1,4 +1,12 @@
 class Chicken < ApplicationRecord
+  # Custom slug config here
+  extend FriendlyId
+  friendly_id :tag_number, use: :slugged
+
+  def to_param
+    slug
+  end
+  
   # Associations
   belongs_to :user
   has_many_attached :chicken_images

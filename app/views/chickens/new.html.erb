@@ -20,8 +20,7 @@
           <% end %>
 
           <div class="blogform">
-            <%= form.label :tag_number, style: "display: block" %>
-            <%= form.text_field :tag_number %>
+            <%= form.text_field :tag_number, type: :hidden %>
           </div>
 
           <div class="blogform">
@@ -31,8 +30,7 @@
           </div>
 
           <div class="blogform">
-            <%= form.label :age, style: "display: block" %>
-            <%= form.text_field :age %>
+            <%= form.text_field :age, type: :hidden %>
           </div>
 
           <div class="blogform">
@@ -46,7 +44,7 @@
           </div>
 
           <div>
-            <%= form.number_field :user_id, id: :chicken_user_id, value: current_user.id %>
+            <%= form.number_field :user_id, id: :chicken_user_id, value: current_user.id, type: :hidden %>
           </div>
 
           <p>

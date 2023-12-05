@@ -13,12 +13,13 @@
 
   <div>
     <%= form.label :tag_number, style: "display: block" %>
-    <%= form.number_field :tag_number %>
+    <%= form.text_field :tag_number %>
   </div>
 
   <div>
     <%= form.label :chicken_images, style: "display: block" %>
-    <%= form.text_field :chicken_images %>
+    <%= form.file_field :chicken_images, multiple: true, direct_upload: true %>
+    <div id="image-preview"></div>
   </div>
 
   <div>

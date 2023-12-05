@@ -65,7 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_16_193021) do
   create_table "chickens", force: :cascade do |t|
     t.string "tag_number"
     t.binary "chicken_images"
-    t.integer "age", default: 0
+    t.float "age", default: 0.0
     t.date "date_hatched"
     t.integer "parent_id"
     t.bigint "user_id", null: false

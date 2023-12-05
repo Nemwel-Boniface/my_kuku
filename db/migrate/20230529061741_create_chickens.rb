@@ -3,7 +3,7 @@ class CreateChickens < ActiveRecord::Migration[7.0]
     create_table :chickens do |t|
       t.string :tag_number
       t.binary :chicken_images
-      t.integer :age, default: 0
+      t.float :age, default: 0.0
       t.date :date_hatched
       t.integer :parent_id
       t.references :user, null: false, foreign_key: {to_table: :users}

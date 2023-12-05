@@ -13,6 +13,7 @@ class Chicken < ApplicationRecord
 
   # Callback for custom methods
   before_create :generate_tag_number
+  before_create :calculate_age
 
   private
 
@@ -31,4 +32,15 @@ class Chicken < ApplicationRecord
     # Now let's wire them all up together
     self.tag_number = "#{current_month}#{current_date}#{tag_number_with_zeros}"
   end
+
+  def calculate_age
+    if date_hatched.present?
+      days_old = (Date.today - date_hatched.to_date).to_i
+      age_in_weeks = (days_old / 7.0)
+      self.age = age_in_weeks.round(2)
+    else
+      self.age = nil
+    end
+  end
+
 end

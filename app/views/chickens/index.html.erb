@@ -6,6 +6,12 @@
 </header>
 
 <main class="chickens">
+  <% if user_signed_in? %>
+    <div class="newchickenlink">
+      <h2 class="darkgreentext">Let's create a new blog</h2>
+      <p><%= link_to "New Chicken", new_chicken_path %></p>
+    </div>
+  <% end %>
   <section >
     <% @chickens.each do |chicken| %>
       <p>

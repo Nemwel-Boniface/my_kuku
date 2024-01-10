@@ -8,50 +8,37 @@
 <main class="chickens">
   <% if user_signed_in? %>
     <div class="newchickenlink">
-      <h2 class="darkgreentext">Let's create a new blog</h2>
+      <h2 class="darkgreentext">Let's create a new chicken</h2>
       <p><%= link_to "New Chicken", new_chicken_path %></p>
     </div>
   <% end %>
   <section >
-    <% @chickens.each do |chicken| %>
-      <p>
-        <strong>Tag number:</strong>
-        <%= chicken.tag_number %>
-      </p>
-
-      <p>
-        <% @chickens.each do |chicken| %>
-          <% chicken.chicken_images_attachments.each do |attachment| %>
-            <% if attachment.blob.present? %>
-              <img src="<%= url_for(attachment.blob) %>">
+    <% if @chickens.empty? %>
+      <h2>There are no created chickens yet</h2> 
+    <% else %>
+      <% @chickens.each do |chicken| %>
+        <div class="chicken">
+          <p>
+            <% @chickens.each do |chicken| %>
+              <% chicken.chicken_images_attachments.each do |attachment| %>
+                <% if attachment.blob.present? %>
+                  <img src="<%= url_for(attachment.blob) %>">
+                <% end %>
+              <% end %>
             <% end %>
-          <% end %>
-        <% end %>
-        
-      </p>
+          </p>
 
-      <p>
-        <strong>Age:</strong>
-        <%= chicken.age %>
-      </p>
+          <p>
+            <strong>Tag number:</strong>
+            <%= chicken.tag_number %>
+          </p>
 
-      <p>
-        <strong>Date hatched:</strong>
-        <%= chicken.date_hatched %>
-      </p>
-
-      <p>
-        <strong>Parent:</strong>
-        <%= chicken.parent_id %>
-      </p>
-      <p>
-        <%= link_to "Show this chicken", chicken %>
-      </p>
+          <p>
+            <%= link_to "Chicken Details", chicken %>
+          </p>
+        </div>
+      <% end %>
     <% end %>
-    
-
   </section>
 
 </main>
-
-<%= link_to "New chicken", new_chicken_path %>

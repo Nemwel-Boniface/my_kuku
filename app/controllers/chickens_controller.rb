@@ -66,6 +66,6 @@ class ChickensController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def chicken_params
-      params.require(:chicken).permit(:tag_number, :age, :date_hatched, :parent_id, :user_id, chicken_images: [])
+      params.require(:chicken).permit(:tag_number, :age, :date_hatched, :parent_id, :user_id, :chicken_image)
     end
 end

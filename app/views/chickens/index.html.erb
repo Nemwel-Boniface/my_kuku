@@ -12,30 +12,27 @@
       <p><%= link_to "New Chicken", new_chicken_path %></p>
     </div>
   <% end %>
-  <section >
+  <section class="chickensWrapper">
     <% if @chickens.empty? %>
       <h2>There are no created chickens yet</h2> 
     <% else %>
       <% @chickens.each do |chicken| %>
         <div class="chicken">
-          <p>
-            <% @chickens.each do |chicken| %>
-              <% chicken.chicken_images_attachments.each do |attachment| %>
-                <% if attachment.blob.present? %>
-                  <img src="<%= url_for(attachment.blob) %>">
-                <% end %>
-              <% end %>
-            <% end %>
-          </p>
+          <% if chicken.chicken_image.attached? %>
+            <image src="<%= (url_for(chicken.chicken_image))%>">
+          <% end %>
 
-          <p>
-            <strong>Tag number:</strong>
-            <%= chicken.tag_number %>
-          </p>
+          <div>
+            <p>
+              <strong>Tag number:</strong>
+              <%= chicken.tag_number %>
+            </p>
 
-          <p>
-            <%= link_to "Chicken Details", chicken %>
-          </p>
+            <p class="chickenlink">
+              <%= link_to "CHICKEN DETAILS", chicken %>
+              <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </p>
+          </div>
         </div>
       <% end %>
     <% end %>

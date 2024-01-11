@@ -9,7 +9,7 @@ class Chicken < ApplicationRecord
   
   # Associations
   belongs_to :user
-  has_many_attached :chicken_images
+  has_one_attached :chicken_image
 
   # Callback for custom methods
   before_create :generate_tag_number

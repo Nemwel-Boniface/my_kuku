@@ -1,0 +1,43 @@
+<%= form_with(model: chicken) do |form| %>
+  <% if chicken.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(chicken.errors.count, "error") %> prohibited this chicken from being saved:</h2>
+
+      <ul>
+        <% chicken.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :tag_number, style: "display: block" %>
+    <%= form.text_field :tag_number %>
+  </div>
+
+  <div>
+    <%= form.label :chicken_images, style: "display: block" %>
+    <%= form.file_field :chicken_images, multiple: true, direct_upload: true %>
+    <div id="image-preview"></div>
+  </div>
+
+  <div>
+    <%= form.label :age, style: "display: block" %>
+    <%= form.number_field :age %>
+  </div>
+
+  <div>
+    <%= form.label :date_hatched, style: "display: block" %>
+    <%= form.date_field :date_hatched %>
+  </div>
+
+  <div>
+    <%= form.label :parent_id, style: "display: block" %>
+    <%= form.number_field :parent_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

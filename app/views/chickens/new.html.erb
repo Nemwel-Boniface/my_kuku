@@ -45,6 +45,12 @@
             <%= form.text_field :parent_id, placeholder: "Parent ID" %>
           </div>
 
+          <div class="signupinput">
+            <%= form.label :poultry_type, "Select Poultry Type" %>
+            <%= form.select :poultry_type, options_for_select(Chicken::POULTRY_TYPES), prompt: "Choose a poultry type" %>
+          </div>
+
+
           <%= form.hidden_field :user_id, value: current_user.id %>
 
           <div class="devisesubmit">

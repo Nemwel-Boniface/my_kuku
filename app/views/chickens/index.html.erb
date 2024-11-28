@@ -1,0 +1,46 @@
+<p style="color: green"><%= notice %></p>
+
+<header class="aboutheader">
+  <h2>Poultry</h2>
+  <h3><%= link_to "Home", root_path %> <span>-</span>Poultry</h3>
+</header>
+
+<main class="chickens">
+  <% if user_signed_in? %>
+    <div class="newchickenlink">
+      <h2 class="darkgreentext">Let's create a new Poultry</h2>
+      <p><%= link_to "New Poultry", new_chicken_path %></p>
+    </div>
+  <% end %>
+  <section class="chickensWrapper">
+    <% if @chickens.empty? %>
+      <h2>There are no created Poultry yet</h2> 
+    <% else %>
+      <% @chickens.each do |chicken| %>
+        <div class="chicken">
+          <% if chicken.chicken_image.attached? %>
+            <image src="<%= (url_for(chicken.chicken_image))%>">
+          <% end %>
+
+          <div>
+            <p>
+              <strong>Tag number:</strong>
+              <%= chicken.tag_number %>
+            </p>
+
+            <p>
+              <strong>Poultry type:</strong>
+              <%= chicken.poultry_type %>
+            </p>
+
+            <p class="chickenlink">
+              <%= link_to "CHICKEN DETAILS", chicken %>
+              <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </section>
+
+</main>

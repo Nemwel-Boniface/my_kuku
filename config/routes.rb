@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :chickens
   resources :dashboards
   resources :comments
   resources :blogs

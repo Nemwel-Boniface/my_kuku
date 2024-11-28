@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_16_193021) do
+ActiveRecord::Schema[7.0].define(version: 2024_11_28_123929) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -96,6 +96,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_16_193021) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "eggs", force: :cascade do |t|
+    t.integer "egg_count"
+    t.string "egg_size"
+    t.string "egg_color"
+    t.date "laid_on"
+    t.bigint "chicken_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chicken_id"], name: "index_eggs_on_chicken_id"
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
@@ -143,4 +154,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_16_193021) do
   add_foreign_key "blogs", "users"
   add_foreign_key "chickens", "users"
   add_foreign_key "comments", "blogs"
+  add_foreign_key "eggs", "chickens"
 end

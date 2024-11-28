@@ -14,6 +14,7 @@ class Chicken < ApplicationRecord
   # Associations
   belongs_to :user
   has_one_attached :chicken_image
+  has_many :eggs, dependent: :destroy
 
   # Callback for custom methods
   before_create :generate_tag_number

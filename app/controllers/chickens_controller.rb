@@ -1,5 +1,5 @@
 class ChickensController < ApplicationController
-  before_action :set_chicken, only: %i[ show edit update destroy ]
+  before_action :set_chicken, only: %i[show edit update destroy]
 
   # GET /chickens or /chickens.json
   def index
@@ -17,8 +17,7 @@ class ChickensController < ApplicationController
   end
 
   # GET /chickens/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /chickens or /chickens.json
   def create
@@ -26,7 +25,7 @@ class ChickensController < ApplicationController
 
     respond_to do |format|
       if @chicken.save
-        format.html { redirect_to chicken_url(@chicken), notice: "Chicken was successfully created." }
+        format.html { redirect_to chicken_url(@chicken), notice: 'Chicken was successfully created.' }
         format.json { render :show, status: :created, location: @chicken }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +38,7 @@ class ChickensController < ApplicationController
   def update
     respond_to do |format|
       if @chicken.update(chicken_params)
-        format.html { redirect_to chicken_url(@chicken), notice: "Chicken was successfully updated." }
+        format.html { redirect_to chicken_url(@chicken), notice: 'Chicken was successfully updated.' }
         format.json { render :show, status: :ok, location: @chicken }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,19 +52,21 @@ class ChickensController < ApplicationController
     @chicken.destroy
 
     respond_to do |format|
-      format.html { redirect_to chickens_url, notice: "Chicken was successfully destroyed." }
+      format.html { redirect_to chickens_url, notice: 'Chicken was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_chicken
-      @chicken = Chicken.friendly.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def chicken_params
-      params.require(:chicken).permit(:tag_number, :age, :date_hatched, :parent_id, :user_id, :chicken_image, :poultry_type)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_chicken
+    @chicken = Chicken.friendly.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def chicken_params
+    params.require(:chicken).permit(:tag_number, :age, :date_hatched, :parent_id, :user_id, :chicken_image,
+                                    :poultry_type)
+  end
 end

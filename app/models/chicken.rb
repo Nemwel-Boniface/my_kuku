@@ -6,11 +6,11 @@ class Chicken < ApplicationRecord
   def to_param
     slug
   end
-  
+
   POULTRY_TYPES = %w[Chicken Duck Goose Turkey Quail].freeze
 
   validates :poultry_type, presence: true, inclusion: { in: POULTRY_TYPES }
-  
+
   # Associations
   belongs_to :user
   has_one_attached :chicken_image
@@ -46,5 +46,4 @@ class Chicken < ApplicationRecord
       self.age = nil
     end
   end
-
 end

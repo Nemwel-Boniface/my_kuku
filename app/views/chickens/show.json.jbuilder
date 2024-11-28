@@ -1,1 +1,1 @@
-json.partial! "chickens/chicken", chicken: @chicken
+json.partial! 'chickens/chicken', chicken: @chicken

@@ -25,7 +25,7 @@ class ChickensController < ApplicationController
 
     respond_to do |format|
       if @chicken.save
-        format.html { redirect_to chicken_url(@chicken), notice: 'Chicken was successfully created.' }
+        format.html { redirect_to chickens_path, notice: 'Chicken was successfully created.' }
         format.json { render :show, status: :created, location: @chicken }
       else
         format.html { render :new, status: :unprocessable_entity }

@@ -1,9 +1,12 @@
 class Egg < ApplicationRecord
   # Egg associations
-  belongs_to :chicken
 
   # Enums
   EGG_SIZE = %w[Small Medium Large].freeze
+
+  POULTRY_TYPES = %w[Chicken Duck Goose Turkey Quail].freeze
+
+  validates :poultry_type, presence: true, inclusion: { in: POULTRY_TYPES }
 
   # Validations
   validates :egg_size, presence: true, inclusion: { in: EGG_SIZE }

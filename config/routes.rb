@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :chickens
+  resources :eggs, only: [:index, :new, :show, :create, :edit, :update, :destroy]
   resources :dashboards
   resources :comments
   resources :blogs

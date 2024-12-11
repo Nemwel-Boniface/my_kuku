@@ -99,12 +99,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_28_123929) do
   create_table "eggs", force: :cascade do |t|
     t.integer "egg_count"
     t.string "egg_size"
-    t.string "egg_color"
+    t.string "poultry_type"
     t.date "laid_on"
-    t.bigint "chicken_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["chicken_id"], name: "index_eggs_on_chicken_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -154,5 +152,4 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_28_123929) do
   add_foreign_key "blogs", "users"
   add_foreign_key "chickens", "users"
   add_foreign_key "comments", "blogs"
-  add_foreign_key "eggs", "chickens"
 end

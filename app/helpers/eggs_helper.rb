@@ -1,0 +1,2 @@
+module EggsHelper
+end

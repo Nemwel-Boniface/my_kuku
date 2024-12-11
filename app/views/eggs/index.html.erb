@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<header class="aboutheader">
+  <h2>Eggs</h2>
+  <h3><%= link_to "Home", root_path %> <span>-</span> Eggs</h3>
+</header>
+
+<main class="eggs chickens">
+  <% if user_signed_in? %>
+    <div class="newchickenlink">
+      <h2 class="darkgreentext">Let's create a new Egg</h2>
+      <p><%= link_to "New Egg", new_egg_path %></p>
+    </div>
+  <% end %>
+
+  <section class="eggStatsWrapper">
+    <% if @egg_stats.empty? %>
+      <h2>There are no created Eggs records yet</h2>
+    <% else %>
+      <% Egg::POULTRY_TYPES.each do |poultry_type| %>
+        <div class="card">
+          <h3><%= poultry_type %></h3>
+          <p>Total Eggs Laid: <%= @egg_stats[poultry_type] || 0 %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </section>
+</main>

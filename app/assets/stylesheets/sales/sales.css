@@ -55,3 +55,100 @@ tr:hover {
 .action-button:hover {
   background-color: #45a049;
 }
+
+/* Custom Styling for the Invoice Page */
+
+/* Header */
+.invoice-header {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+/* Description under the header */
+.invoice-description {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: #666;
+  text-align: center;
+}
+
+/* Table Container */
+.invoice-table-container {
+  padding-left: 8%;
+  padding-right: 8%;
+  margin-bottom: 2rem;
+}
+
+/* Table */
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.invoice-table-header {
+  padding: 1rem;
+  background-color: #f2f2f2;
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+}
+
+.invoice-table-row:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.invoice-table-cell {
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+  color: #333;
+}
+
+.invoice-table-cell-empty {
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  color: #999;
+}
+
+/* Summary Section */
+.invoice-summary {
+  text-align: center; /* Center the total price */
+  margin-top: 2rem;
+}
+
+/* Total Price */
+.total-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Button Container */
+.confirm-sale-btn-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* Button */
+.confirm-sale-btn {
+  background-color: #3498db;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.confirm-sale-btn:hover {
+  background-color: #2980b9;
+}

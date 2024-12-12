@@ -124,10 +124,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_12_12_061221) do
   end
 
   create_table "sale_items", force: :cascade do |t|
-    t.string "item_type"
-    t.string "category"
-    t.integer "quantity"
-    t.decimal "price_per_unit"
+    t.string "item_type", null: false
+    t.string "category", null: false
+    t.integer "quantity", null: false
+    t.decimal "price_per_unit", precision: 10, scale: 2, null: false
     t.bigint "sale_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -135,8 +135,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_12_12_061221) do
   end
 
   create_table "sales", force: :cascade do |t|
-    t.decimal "total_price"
-    t.string "status"
+    t.decimal "total_price", precision: 10, scale: 2, default: "0.0", null: false
+    t.string "status", default: "Pending", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,0 +1,40 @@
+<h1 class="invoice-header">Invoice</h1>
+
+<p class="invoice-description">Items you are purchasing:</p>
+
+<div class="invoice-table-container">
+  <table class="invoice-table">
+    <thead>
+      <tr>
+        <th class="invoice-table-header">Item</th>
+        <th class="invoice-table-header">Quantity</th>
+        <th class="invoice-table-header">Price</th>
+        <th class="invoice-table-header">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @items.present? && @items.is_a?(Array) %>
+        <% @items.each do |item| %>
+          <tr class="invoice-table-row">
+            <td class="invoice-table-cell"><%= item[:item_type].capitalize %> - <%= item[:category].capitalize %></td>
+            <td class="invoice-table-cell"><%= item[:quantity] %></td>
+            <td class="invoice-table-cell"><%= number_to_currency(item[:price_per_unit], unit: "KES ", format: "%u%n") %></td>
+            <td class="invoice-table-cell"><%= number_to_currency(item[:quantity].to_i * item[:price_per_unit].to_f, unit: "KES ", format: "%u%n") %></td>
+          </tr>
+        <% end %>
+      <% else %>
+        <tr class="invoice-table-row">
+          <td colspan="4" class="invoice-table-cell-empty">No items selected.</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="invoice-summary">
+  <p class="total-price">Total Price: <%= number_to_currency(@total_price, unit: "KES ", format: "%u%n") %></p>
+</div>
+
+<div class="confirm-sale-btn-container">
+  <%= button_to 'Confirm Sale', confirm_sale_path, method: :post, class: 'confirm-sale-btn' %>
+</div>

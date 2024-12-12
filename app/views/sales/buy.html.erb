@@ -1,0 +1,59 @@
+<div class="page-wrapper">
+  <h1>Buy Items</h1>
+
+  <h2>Eggs</h2>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Poultry Type</th>
+          <th>Egg Size</th>
+          <th>Price Per Egg</th>
+          <th>Available Quantity</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @eggs.each do |egg| %>
+          <tr>
+            <td><%= egg.poultry_type %></td>
+            <td><%= egg.egg_size %></td>
+            <td><%= number_to_currency(egg.avg_price) %></td>
+            <td><%= egg.total_eggs %></td>
+            <td>
+              <%= number_field_tag "items[eggs][#{egg.poultry_type}_#{egg.egg_size}][quantity]", 0, min: 0 %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Poultry</h2>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Poultry Type</th>
+          <th>Price</th>
+          <th>Available Quantity</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @chickens.each do |chicken| %>
+          <tr>
+            <td><%= chicken.poultry_type.capitalize %></td>
+            <td><%= number_to_currency(chicken.price_per_poultry) %></td>
+            <td><%= chicken.no_of_poultry %> </td> <!-- Correct field to show the number of poultry -->
+            <td>
+              <%= number_field_tag "items[poultry][#{chicken.poultry_type}][quantity]", 0, min: 0 %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <%= button_to "Proceed to Invoice", new_sale_path, method: :get, class: 'action-button' %>
+</div>

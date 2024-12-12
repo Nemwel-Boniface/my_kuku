@@ -17,7 +17,12 @@
         </li>|
 
         <% if user_signed_in? %>
-          <li class="nav-item">
+
+        <li class="nav-item">
+          <%= link_to "Buy Items", buy_sales_path %>
+        </li>|
+
+        <li class="nav-item">
           <%= link_to "Poultry", chickens_path, class: ""%>
         </li>|
 

@@ -1,9 +1,16 @@
 <main class="eggs chickens">
   <% if user_signed_in? %>
-    <div class="newchickenlink">
-      <h2 class="darkgreentext">Let's create a new Egg</h2>
-      <p><%= link_to "New Egg", new_egg_path %></p>
-    </div>
+    <% if current_user.role == "admin" || current_user.role == "worker" %>
+      <div class="newchickenlink">
+        <h2 class="darkgreentext">Let's create a new Egg</h2>
+        <p><%= link_to "New Egg", new_egg_path %></p>
+      </div>
+    <% else %>
+      <div class="userMessage">
+        <h2 class="darkgreentext">Have a look at the eggs we have in store!</h2>
+        <p>Feel free to explore the egg records available below.</p>
+      </div>
+    <% end %>
   <% end %>
 
   <section class="eggStatsWrapper">

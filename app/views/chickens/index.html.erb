@@ -7,11 +7,19 @@
 
 <main class="chickens">
   <% if user_signed_in? %>
-    <div class="newchickenlink">
-      <h2 class="darkgreentext">Let's create a new Poultry</h2>
-      <p><%= link_to "New Poultry", new_chicken_path %></p>
-    </div>
+    <% if current_user.role == "admin" || current_user.role == "worker" %>
+      <div class="newchickenlink">
+        <h2 class="darkgreentext">Let's create a new Poultry</h2>
+        <p><%= link_to "New Poultry", new_chicken_path %></p>
+      </div>
+    <% else %>
+      <div class="userMessage">
+        <h2 class="darkgreentext">Explore the poultry we have available!</h2>
+        <p>Browse through the records of poultry listed below.</p>
+      </div>
+    <% end %>
   <% end %>
+
   <section class="chickensWrapper">
     <% if @chickens.empty? %>
       <h2>There are no created Poultry yet</h2> 
@@ -19,7 +27,7 @@
       <% @chickens.each do |chicken| %>
         <div class="chicken">
           <% if chicken.chicken_image.attached? %>
-            <image src="<%= (url_for(chicken.chicken_image))%>">
+            <image src="<%= url_for(chicken.chicken_image) %>">
           <% end %>
 
           <div>
@@ -40,13 +48,15 @@
 
             <p>
               <strong>Total price of Poultry:</strong>
-              KES <%= chicken.total_price %>0
+              KES <%= chicken.total_price %>
             </p>
 
-            <p class="chickenlink">
-              <%= link_to "Add more #{chicken.poultry_type.capitalize}", edit_chicken_path(chicken) %>
-              <i class="fa fa-arrow-right" aria-hidden="true"></i>
-            </p>
+            <% if user_signed_in? && (current_user.role == "admin" || current_user.role == "worker") %>
+              <p class="chickenlink">
+                <%= link_to "Add more #{chicken.poultry_type.capitalize}", edit_chicken_path(chicken) %>
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              </p>
+            <% end %>
           </div>
         </div>
       <% end %>

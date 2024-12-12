@@ -8,10 +8,17 @@
 <main class="blogsPage">
 
   <% if user_signed_in? %>
-    <div class="newbloglink">
-      <h2 class="darkgreentext">Let's create a new blog</h2>
-      <p><%= link_to "New blog", new_blog_path %></p>
-    </div>
+    <% if current_user.role == "admin" || current_user.role == "worker" %>
+      <div class="newbloglink">
+        <h2 class="darkgreentext">Let's create a new blog</h2>
+        <p><%= link_to "New blog", new_blog_path %></p>
+      </div>
+    <% else %>
+      <div class="userMessage">
+        <h2 class="darkgreentext">Dive into our latest blogs!</h2>
+        <p>Read through the insightful articles below and get inspired.</p>
+      </div>
+    <% end %>
   <% end %>
 
   <section class="blogs">
@@ -21,15 +28,14 @@
       <% @blogs.each do |blog| %>
         <div class="blog">
           <% if blog.blog_image.attached? %>
-            <image src="<%= (url_for(blog.blog_image))%>">
+            <image src="<%= url_for(blog.blog_image) %>">
           <% end %>
           <h3 class="darkgreentext"><%= blog.blog_title %></h3>
-          <p class="italics"><%= blog.date_created %> - <%= blog.comments_counter > 0? blog.comments_counter : "No" %> Comments</p>
+          <p class="italics"><%= blog.date_created %> - <%= blog.comments_counter.positive? ? blog.comments_counter : "No" %> Comments</p>
           <p class="lightgraytext"><%= blog.blog_intro %></p>
           <p class="bloglink"><%= link_to "READ MORE", blog_path(blog) %><i class="fa fa-arrow-right" aria-hidden="true"></i></p>
         </div>
       <% end %>
     <% end %>
-    
   </section>
 </main>

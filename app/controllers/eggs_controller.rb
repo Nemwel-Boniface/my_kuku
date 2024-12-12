@@ -3,7 +3,7 @@ class EggsController < ApplicationController
   def index
     @eggs = Egg.all
     @egg_stats = Egg.total_eggs_and_prices
-  end  
+  end
 
   # Display the form for creating a new egg record
   def new

@@ -13,15 +13,15 @@ class Egg < ApplicationRecord
   # Methods to calculate statistics
   def self.total_eggs_and_prices
     POULTRY_TYPES.each_with_object({}) do |poultry_type, stats|
-      eggs = where(poultry_type: poultry_type)
+      eggs = where(poultry_type:)
       total_eggs = eggs.sum(:egg_count)
       total_price = eggs.sum('egg_count * price_per_egg')
       average_price_per_egg = eggs.average(:price_per_egg)
 
-      stats[poultry_type] = { 
-        total_eggs: total_eggs, 
-        total_price: total_price, 
-        average_price_per_egg: average_price_per_egg 
+      stats[poultry_type] = {
+        total_eggs:,
+        total_price:,
+        average_price_per_egg:
       }
     end
   end

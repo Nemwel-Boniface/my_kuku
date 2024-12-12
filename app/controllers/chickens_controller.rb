@@ -35,20 +35,19 @@ class ChickensController < ApplicationController
   end
 
   # PATCH/PUT /chickens/1 or /chickens/1.json
-  
+
   def update
     additional_poultry = params[:chicken][:no_of_poultry].to_i
     @chicken.no_of_poultry += additional_poultry
-  
+
     if @chicken.save
       flash[:notice] = "#{additional_poultry} more #{@chicken.poultry_type.pluralize} added successfully."
       redirect_to chickens_path
     else
-      flash[:alert] = "There was an error updating the poultry."
+      flash[:alert] = 'There was an error updating the poultry.'
       render :edit
     end
   end
-  
 
   # DELETE /chickens/1 or /chickens/1.json
   def destroy

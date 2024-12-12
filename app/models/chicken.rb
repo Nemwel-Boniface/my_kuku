@@ -9,11 +9,11 @@ class Chicken < ApplicationRecord
 
   # Enums with string values
   enum poultry_type: {
-    chicken: "chicken",
-    duck: "duck",
-    goose: "goose",
-    turkey: "turkey",
-    quail: "quail"
+    chicken: 'chicken',
+    duck: 'duck',
+    goose: 'goose',
+    turkey: 'turkey',
+    quail: 'quail'
   }, _prefix: true
 
   validates :poultry_type, presence: true, inclusion: { in: poultry_types.keys }
@@ -53,12 +53,12 @@ class Chicken < ApplicationRecord
   # Set the price per poultry based on the poultry_type
   def set_price_per_poultry
     self.price_per_poultry = case poultry_type
-                              when "chicken" then 100.0
-                              when "duck" then 120.0
-                              when "goose" then 150.0
-                              when "turkey" then 200.0
-                              when "quail" then 80.0
-                              else 0.0
-                              end
+                             when 'chicken' then 100.0
+                             when 'duck' then 120.0
+                             when 'goose' then 150.0
+                             when 'turkey' then 200.0
+                             when 'quail' then 80.0
+                             else 0.0
+                             end
   end
 end

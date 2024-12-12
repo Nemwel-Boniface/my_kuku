@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   resources :contacts
   resources :abouts
   resources :homes
+  resources :sales, only: [:new, :create, :show] do
+    collection do
+      get :buy
+    end
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

@@ -63,12 +63,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_28_123929) do
   end
 
   create_table "chickens", force: :cascade do |t|
-    t.string "tag_number"
+    t.integer "no_of_poultry"
     t.string "poultry_type"
     t.string "chicken_image"
     t.float "age", default: 0.0
     t.date "date_hatched"
     t.integer "parent_id"
+    t.float "price_per_poultry"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -101,6 +102,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_28_123929) do
     t.string "egg_size"
     t.string "poultry_type"
     t.date "laid_on"
+    t.float "price_per_egg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

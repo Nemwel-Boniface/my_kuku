@@ -5,6 +5,7 @@ class CreateEggs < ActiveRecord::Migration[7.0]
       t.string :egg_size
       t.string :poultry_type
       t.date :laid_on
+      t.float :price_per_egg
 
       t.timestamps
     end

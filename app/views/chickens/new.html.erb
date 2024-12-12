@@ -4,7 +4,6 @@
 
     <section class="signup">
       <div class="signupleft">
-        
         <%= image_tag("freerangehens.jpg", alt: "Image of chicken in a farm") %>
       </div>
 
@@ -22,17 +21,18 @@
           <% end %>
 
           <div class="signupinput">
-            <%= form.text_field :tag_number, placeholder: "Tag Number", type: :hidden %>
+            <%= form.number_field :no_of_poultry, placeholder: "Number of poultry", min: 1 %>
+          </div>
+
+          <div class="signupinput">
+            <%= form.label :poultry_type, "Select Poultry Type" %>
+            <%= form.select :poultry_type, Chicken.poultry_types.map { |type, price| ["#{type.capitalize} - $#{price}", type] }, prompt: "Choose a poultry type" %>
           </div>
 
           <div class="signupinput">
             <%= form.label :chicken_image %>
             <%= form.file_field :chicken_image %>
             <div id="image-preview"></div>
-          </div>
-
-          <div class="signupinput">
-            <%= form.number_field :age, type: :hidden, placeholder: "Age in weeks" %>
           </div>
 
           <div class="signupinput">
@@ -45,16 +45,10 @@
             <%= form.text_field :parent_id, placeholder: "Parent ID" %>
           </div>
 
-          <div class="signupinput">
-            <%= form.label :poultry_type, "Select Poultry Type" %>
-            <%= form.select :poultry_type, options_for_select(Chicken::POULTRY_TYPES), prompt: "Choose a poultry type" %>
-          </div>
-
-
           <%= form.hidden_field :user_id, value: current_user.id %>
 
           <div class="devisesubmit">
-            <%= form.submit "Add Chicken" %>
+            <%= form.submit "Add Poultry" %>
           </div>
         <% end %>
       </div>

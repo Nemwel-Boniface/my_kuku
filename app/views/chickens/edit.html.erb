@@ -1,10 +1,26 @@
-<h1>Editing chicken</h1>
+<p style="color: green"><%= notice %></p>
 
-<%= render "form", chicken: @chicken %>
+<header class="aboutheader">
+  <h2>Edit Poultry</h2>
+  <h3><%= link_to "Home", root_path %> <span>-</span>Poultry</h3>
+</header>
 
-<br>
+<main class="edit-chicken">
+  <h2 class="darkgreentext">Add More to Your Poultry Inventory</h2>
 
-<div>
-  <%= link_to "Show this chicken", @chicken %> |
-  <%= link_to "Back to chickens", chickens_path %>
-</div>
+  <%= form_with(model: @chicken, url: chicken_path(@chicken), method: :patch, local: true) do |form| %>
+    <div>
+      <strong>Poultry Type:</strong>
+      <p><%= @chicken.poultry_type.capitalize %></p>
+    </div>
+
+    <div>
+      <%= form.label :no_of_poultry, "Number of additional Poultry:" %>
+      <%= form.number_field :no_of_poultry, min: 1, value: 1 %>
+    </div>
+
+    <div>
+      <%= form.submit "Update Poultry Inventory" %>
+    </div>
+  <% end %>
+</main>

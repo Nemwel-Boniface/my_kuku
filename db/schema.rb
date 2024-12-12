@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_16_193021) do
+ActiveRecord::Schema[7.0].define(version: 2024_11_28_123929) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -63,12 +63,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_16_193021) do
   end
 
   create_table "chickens", force: :cascade do |t|
-    t.string "tag_number"
+    t.integer "no_of_poultry"
     t.string "poultry_type"
     t.string "chicken_image"
     t.float "age", default: 0.0
     t.date "date_hatched"
     t.integer "parent_id"
+    t.float "price_per_poultry"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -92,6 +93,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_16_193021) do
   end
 
   create_table "dashboards", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "eggs", force: :cascade do |t|
+    t.integer "egg_count"
+    t.string "egg_size"
+    t.string "poultry_type"
+    t.date "laid_on"
+    t.float "price_per_egg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,41 +1,44 @@
 class Chicken < ApplicationRecord
   # Custom slug config here
   extend FriendlyId
-  friendly_id :tag_number, use: :slugged
+  friendly_id :poultry_type, use: :slugged
 
   def to_param
     slug
   end
 
-  POULTRY_TYPES = %w[Chicken Duck Goose Turkey Quail].freeze
+  # Enums with string values
+  enum poultry_type: {
+    chicken: 'chicken',
+    duck: 'duck',
+    goose: 'goose',
+    turkey: 'turkey',
+    quail: 'quail'
+  }, _prefix: true
 
-  validates :poultry_type, presence: true, inclusion: { in: POULTRY_TYPES }
+  validates :poultry_type, presence: true, inclusion: { in: poultry_types.keys }
+  validates :no_of_poultry, numericality: { greater_than: 0 }
 
   # Associations
   belongs_to :user
   has_one_attached :chicken_image
+  has_many :eggs, dependent: :destroy
 
   # Callback for custom methods
-  before_create :generate_tag_number
   before_create :calculate_age
+  before_create :set_price_per_poultry
+
+  # Calculate total price for all poultry
+  def total_price
+    no_of_poultry * price_per_poultry
+  end
+
+  # Calculate price for a specific poultry type (e.g., Chicken, Duck, etc.)
+  def self.price_by_type(type)
+    where(poultry_type: type).sum(:price_per_poultry)
+  end
 
   private
-
-  def generate_tag_number
-    # Get the corrent month eh June
-    current_month = Date.today.strftime('%B')
-
-    # Get the current date in the month
-    current_date = Date.today.strftime('%d')
-
-    id = Chicken.count + 1
-
-    # Let's append a few zeros before the ID of the record being created
-    tag_number_with_zeros = format('%03d', id)
-
-    # Now let's wire them all up together
-    self.tag_number = "#{current_month}#{current_date}#{tag_number_with_zeros}"
-  end
 
   def calculate_age
     if date_hatched.present?
@@ -45,5 +48,17 @@ class Chicken < ApplicationRecord
     else
       self.age = nil
     end
+  end
+
+  # Set the price per poultry based on the poultry_type
+  def set_price_per_poultry
+    self.price_per_poultry = case poultry_type
+                             when 'chicken' then 100.0
+                             when 'duck' then 120.0
+                             when 'goose' then 150.0
+                             when 'turkey' then 200.0
+                             when 'quail' then 80.0
+                             else 0.0
+                             end
   end
 end

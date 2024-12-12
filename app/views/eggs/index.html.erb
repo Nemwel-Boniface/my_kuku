@@ -1,0 +1,23 @@
+<main class="eggs chickens">
+  <% if user_signed_in? %>
+    <div class="newchickenlink">
+      <h2 class="darkgreentext">Let's create a new Egg</h2>
+      <p><%= link_to "New Egg", new_egg_path %></p>
+    </div>
+  <% end %>
+
+  <section class="eggStatsWrapper">
+    <% if @egg_stats.empty? %>
+      <h2>There are no created Eggs records yet</h2>
+    <% else %>
+      <% @egg_stats.each do |poultry_type, stats| %>
+        <div class="card">
+          <h3><%= poultry_type %></h3>
+          <p><strong>Total Eggs Laid:</strong> <%= stats[:total_eggs] %></p>
+          <p><strong>Total Price:</strong> KES <%= stats[:total_price].round(2) %></p>
+          <p><strong>Average Price Per Egg:</strong> KES <%= stats[:average_price_per_egg]&.round(2) || "N/A" %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </section>
+</main>

@@ -1,0 +1,59 @@
+<% if user_signed_in? %>
+  <main class="devise">
+    <h2 class="header">Add a New Egg</h2>
+
+    <section class="signup">
+      <div class="signupleft">
+        <%= image_tag("eggshome.jpg", alt: "Image of eggs") %> 
+      </div>
+
+      <div class="signupright">
+        <%= form_with(model: @egg, local: true, data: { turbo: false }) do |form| %>
+          <% if @egg.errors.any? %>
+            <div style="color: red">
+              <h2><%= pluralize(@egg.errors.count, "error") %> prohibited this egg from being saved:</h2>
+              <ul>
+                <% @egg.errors.each do |error| %>
+                  <li><%= error.full_message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="signupinput">
+            <%= form.number_field :egg_count, placeholder: "Egg Count" %>
+          </div>
+
+          <div class="signupinput">
+            <%= form.label :egg_size, "Select Egg Size" %>
+            <%= form.select :egg_size, options_for_select(Egg::EGG_SIZE), prompt: "Choose an egg size" %>
+          </div>
+
+          <div class="signupinput">
+            <%= form.label :poultry_type, "Select Poultry Type" %>
+            <%= form.select :poultry_type, options_for_select(Egg::POULTRY_TYPES), prompt: "Choose a poultry type" %>
+          </div>
+
+          <div class="signupinput">
+            <%= form.label :laid_on, "Date Egg Was Laid" %>
+            <%= form.date_field :laid_on %>
+          </div>
+
+          <div class="signupinput">
+            <%= form.label :price_per_egg, "Price per Egg (KES)" %>
+            <%= form.number_field :price_per_egg, step: 0.01, placeholder: "Enter price per egg" %>
+          </div>
+
+
+          <div class="devisesubmit">
+            <%= form.submit "Add Egg" %>
+          </div>
+        <% end %>
+      </div>
+    </section>
+  </main>
+<% else %>
+  <main class="eggsPage">
+    <p>Kindly login to create an egg record</p>
+  </main>
+<% end %>

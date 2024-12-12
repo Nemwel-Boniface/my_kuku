@@ -1,0 +1,48 @@
+/* Eggs Index Page Styles */
+.eggs {
+  padding: 2rem;
+}
+
+.newEggLink {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.newEggLink .btn {
+  background-color: #28a745;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.newEggLink .btn:hover {
+  background-color: #218838;
+}
+
+.eggStatsWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #495057;
+}
+
+.card p {
+  font-size: 1.25rem;
+  color: #6c757d;
+}

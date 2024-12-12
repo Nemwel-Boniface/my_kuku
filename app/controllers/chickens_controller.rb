@@ -25,7 +25,7 @@ class ChickensController < ApplicationController
 
     respond_to do |format|
       if @chicken.save
-        format.html { redirect_to chickens_path, notice: 'Chicken was successfully created.' }
+        format.html { redirect_to chickens_path, notice: 'Poultry was successfully created.' }
         format.json { render :show, status: :created, location: @chicken }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -35,24 +35,27 @@ class ChickensController < ApplicationController
   end
 
   # PATCH/PUT /chickens/1 or /chickens/1.json
+  
   def update
-    respond_to do |format|
-      if @chicken.update(chicken_params)
-        format.html { redirect_to chicken_url(@chicken), notice: 'Chicken was successfully updated.' }
-        format.json { render :show, status: :ok, location: @chicken }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @chicken.errors, status: :unprocessable_entity }
-      end
+    additional_poultry = params[:chicken][:no_of_poultry].to_i
+    @chicken.no_of_poultry += additional_poultry
+  
+    if @chicken.save
+      flash[:notice] = "#{additional_poultry} more #{@chicken.poultry_type.pluralize} added successfully."
+      redirect_to chickens_path
+    else
+      flash[:alert] = "There was an error updating the poultry."
+      render :edit
     end
   end
+  
 
   # DELETE /chickens/1 or /chickens/1.json
   def destroy
     @chicken.destroy
 
     respond_to do |format|
-      format.html { redirect_to chickens_url, notice: 'Chicken was successfully destroyed.' }
+      format.html { redirect_to chickens_url, notice: 'Poultry was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -66,7 +69,7 @@ class ChickensController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def chicken_params
-    params.require(:chicken).permit(:tag_number, :age, :date_hatched, :parent_id, :user_id, :chicken_image,
-                                    :poultry_type)
+    params.require(:chicken).permit(:no_of_poultry, :age, :date_hatched, :parent_id, :user_id, :chicken_image,
+                                    :poultry_type, :price_per_poultry)
   end
 end

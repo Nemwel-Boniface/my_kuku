@@ -24,17 +24,27 @@
 
           <div>
             <p>
-              <strong>Tag number:</strong>
-              <%= chicken.tag_number %>
+              <strong>Poultry type:</strong>
+              <%= chicken.poultry_type.capitalize %>
             </p>
 
             <p>
-              <strong>Poultry type:</strong>
-              <%= chicken.poultry_type %>
+              <strong>Number of Poultry:</strong>
+              <%= chicken.no_of_poultry %>
+            </p>
+
+            <p>
+              <strong>Price per Poultry:</strong>
+              <%= chicken.price_per_poultry %>
+            </p>
+
+            <p>
+              <strong>Total price of Poultry:</strong>
+              KES <%= chicken.total_price %>0
             </p>
 
             <p class="chickenlink">
-              <%= link_to "CHICKEN DETAILS", chicken %>
+              <%= link_to "Add more #{chicken.poultry_type.capitalize}", edit_chicken_path(chicken) %>
               <i class="fa fa-arrow-right" aria-hidden="true"></i>
             </p>
           </div>
@@ -42,5 +52,4 @@
       <% end %>
     <% end %>
   </section>
-
 </main>

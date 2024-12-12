@@ -39,6 +39,12 @@
             <%= form.date_field :laid_on %>
           </div>
 
+          <div class="signupinput">
+            <%= form.label :price_per_egg, "Price per Egg (KES)" %>
+            <%= form.number_field :price_per_egg, step: 0.01, placeholder: "Enter price per egg" %>
+          </div>
+
+
           <div class="devisesubmit">
             <%= form.submit "Add Egg" %>
           </div>

@@ -2,7 +2,7 @@ class EggsController < ApplicationController
   # List all eggs and stats (index remains unchanged)
   def index
     @eggs = Egg.all
-    @egg_stats = Egg.group(:poultry_type).sum(:egg_count)
+    @egg_stats = Egg.total_eggs_and_prices
   end  
 
   # Display the form for creating a new egg record
@@ -46,6 +46,6 @@ class EggsController < ApplicationController
 
   # Strong parameters for egg attributes
   def egg_params
-    params.require(:egg).permit(:egg_count, :egg_size, :poultry_type, :laid_on)
+    params.require(:egg).permit(:egg_count, :egg_size, :poultry_type, :laid_on, :price_per_egg)
   end
 end
